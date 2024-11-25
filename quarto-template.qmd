@@ -1,0 +1,38 @@
+---
+title: "Untitled"
+format: 
+  pdf: 
+    keep-tex: true
+    documentclass: article
+    papersize: letter
+    fontsize: 10pt
+    template-partials: 
+      - title.tex
+      - before-bib.tex
+    include-in-header:
+      - text: |
+          \usepackage{sdss2020} % Uses Times Roman font (either newtx or times package)
+          \usepackage{url}
+          \usepackage{hyperref}
+          \usepackage{latexsym}
+          \usepackage{amsmath, amsthm, amsfonts}
+          \usepackage{algorithm, algorithmic}
+    classoption: [twocolumn]
+    mainfont: Times New Roman
+    colorlinks: true
+author: 
+  - name: Author1
+    affiliation: 
+      department: Statistics Department
+      name: somewhere
+    email: name@domain.edu
+    corresponding: true
+  - name: Author2
+    affiliation: 
+      department: Statistics Department
+      name: somewhere
+    email: name@domain.edu
+    orcid: 0000-0002-3803-0972
+csl: association-for-computational-linguistics.csl
+bibliography: refs.bib
+---
