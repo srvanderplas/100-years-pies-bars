@@ -1,0 +1,12 @@
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+\author{
+$for(by-author)$
+$it.name.literal$\\
+$for(it.affiliations)$$if(it.department)$$it.department$$if(it.name)$, $endif$\\$endif$$if(it.name)$$it.name$$endif$$if(it.department)$\\$elseif(it.name)$\\$endif$$endfor$
+$if(it.email)${\tt \href{mailto:$it.email$}{$it.email$}}\\$endif$
+$sep$\\\And
+$endfor$}
+\date{$date$}
+
