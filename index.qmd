@@ -1,5 +1,5 @@
 ---
-title: "Enhancing Data Visualization: Insights from Graphical Perception and Comparative Analysis of Charts"
+title: "100 years of Pies vs. Bars"
 format:
   pdf:
     keep-tex: true
@@ -49,7 +49,7 @@ commands: [mt,svp]
 Following William Playfair's introduction of the pie [@playfair1801statistical] and bar chart [@playfairCommercialPoliticalAtlas1801], there were several discussions on its use and assessment.
 @vonhuhnFurtherStudiesGraphic1927 concludes that bar charts are much more useful and efficient in the majority of situations, even though pie charts have specific applications.
 Bar charts are often better for the majority of practical purposes, although pie charts may occasionally match or surpass them in certain situations [@croxtonBarChartsCircle1927].
-This study will attempt to determine if pie charts may be completely disregarded in this new era or whether there are still some fields in which they can be more beneficial than bar charts.
+This study will attempt to determine if pie charts may be completely disregarded in this new era or whether there are still some fields in which they can be more beneficial than bar charts. 
 
 In the era of 80’s Cleveland and McGill's work on graphical perception provides a foundational framework for understanding how humans decode visual information in graphs. 
 In their 1984 study, they ranked perceptual tasks, identifying position along a common scale as the most accurate, while area-based judgments were deemed the least reliable. 
