@@ -60,12 +60,13 @@ Their hierarchy of feature comprehension is often assumed to be experimentally d
 
 # Purpose and Motivation
 
-The ability to visualize quantitative data effectively is essential in decision-making, scientific research, and education. 
-Graphical tools must convey data with precision while engaging users to ensure optimal understanding. 
-Yet, disagreements persist about which chart types best balance clarity, accessibility, and accuracy. 
-Motivated by the need for improved visual communication, this research synthesizes findings from decades of studies in graphical perception, including experimental evaluations and historical insights. 
-It aims to explore the relative merits of widely used visualizations, including bar charts, pie charts, and hybrid formats like "grables," which combine numerical tables with graphical clarity. 
-The goal is to establish task-specific design principles, empowering practitioners and educators to build more effective visual tools.
+Visualizing quantitative data effectively is essential in decision-making, scientific research, and education.
+Graphical tools must convey data precisely while engaging users to ensure optimal understanding.
+Yet, disagreements persist about which chart types best balance clarity, accessibility, and accuracy.
+Motivated by the need for improved visual communication, this research synthesizes findings from decades of studies in graphical perception, including experimental evaluations and historical insights.
+It aims to explore the relative merits of widely used visualizations, including bar charts, pie charts, and hybrid formats like "grables," [@hinkGrablesEnableExtraction1998] which combine numerical tables with graphical clarity.
+The goal is to establish task-specific design principles and empower practitioners and educators to build more effective visual tools.
+(**Check this paragraph, took help from AI**)
 
 We will try to find out the importance of understanding the historical context of graphical methods, highlighting how their development reflects broader trends in statistical communication. 
 We want to explore how modern visualization software (e.g., Tableau, Power BI) aligns with Cleveland and McGill’s perceptual task hierarchy. 
@@ -79,13 +80,23 @@ Pie charts often appeal due to their simplicity and visual aesthetics but falter
 Bar charts, on the other hand, excel in tasks requiring precision, as they leverage a common positional scale. However, they lack the visual immediacy that non-technical audiences may seek. Meanwhile, emerging formats like grables combine the precision of tables with graphical representation but are underexplored in practice. 
 This research addresses these gaps, seeking to clarify how these visualizations perform across different cognitive and perceptual tasks. 
 In this modern era where AI has become very available to make such kinds of charts within a minute, how do humans’ perspectives change in different fields?
+[**Paraphrased this section**]
+
 
 # Methods
 
-This study draws upon seminal experiments, including Cleveland and McGill’s hierarchy of graphical encodings and Eells' foundational comparisons of pie and bar charts. A detailed review of tasks—value retrieval, trend analysis, and comparisons—provides insights into the cognitive load and accuracy associated with each visualization type. Historical analysis traces the evolution of statistical graphics, from William Playfair’s pioneering work in bar and pie charts to modern hybrid visualizations. Experimental findings are organized into a taxonomy ranking encodings like position, length, area, and color in terms of effectiveness and alignment with specific tasks.
+This study draws upon seminal experiments, including Cleveland and McGill’s hierarchy of graphical encodings and Eells' foundational comparisons of pie and bar charts. 
+A detailed review of tasks—value retrieval, trend analysis, and comparisons—provides insights into the cognitive load and accuracy associated with each visualization type. 
+Historical analysis traces the evolution of statistical graphics, from William Playfair’s pioneering work in bar and pie charts to modern hybrid visualizations. 
+Experimental findings are organized into a taxonomy ranking encodings like position, length, area, and color in terms of effectiveness and alignment with specific tasks.
 
 # Conclusion
 
-This research highlights the critical importance of tailoring visualizations to specific tasks and user contexts. Bar charts, with their emphasis on positional accuracy, remain the gold standard for detailed analyses, while pie charts can serve as accessible tools for summarizing information. Grables represent a promising innovation, combining clarity with precision for complex data sets. By integrating historical perspectives with modern insights from graphical perception studies, this research provides a comprehensive roadmap for designing effective visual tools. Practitioners, educators, and researchers are encouraged to adopt these principles, ensuring their visualizations not only communicate data effectively but also foster deeper engagement and understanding.
+This research highlights the critical importance of tailoring visualizations to specific tasks and user contexts.
+Bar charts, with their emphasis on positional accuracy, remain the gold standard for detailed analyses, while pie charts can serve as accessible tools for summarizing information. 
+Grables represent a promising innovation, combining clarity with precision for complex data sets. 
+By integrating historical perspectives with modern insights from graphical perception studies, this research provides a comprehensive roadmap for designing effective visual tools. 
+Practitioners, educators, and researchers are encouraged to adopt these principles, ensuring their visualizations not only communicate data effectively but also foster deeper engagement and understanding.
 
-# References
+This study emphasises the relevance of designing visualizations for specific tasks and user settings. Bar charts, which emphasize positional accuracy, remain the gold standard for extensive analysis, although pie charts can be useful tools for summarizing information. Grables are a potential innovation that combines clarity and precision in big data sets. This study provides a complete roadmap for developing effective visual aids by combining historical viewpoints with contemporary insights from graphical perception studies. Along with that, this article investigates the relevance of human visual perception in current tools such as Tableau and PowerBI [.mt **added this line**]. Practitioners, educators, and researchers are advised to follow these guidelines to ensure that their visualizations effectively communicate data while also fostering deeper engagement and understanding.
+
