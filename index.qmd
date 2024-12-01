@@ -46,18 +46,17 @@ commands: [mt,svp]
 
 # Historical Background
 
-Following William Playfair's introduction of the pie [@playfair1801statistical] and bar chart [@playfairCommercialPoliticalAtlas1801], there were several discussions on its use and assessment.
-@vonhuhnFurtherStudiesGraphic1927 concludes that bar charts are much more useful and efficient in the majority of situations, even though pie charts have specific applications.
-Bar charts are often better for the majority of practical purposes, although pie charts may occasionally match or surpass them in certain situations [@croxtonBarChartsCircle1927].
-This study will attempt to determine if pie charts may be completely disregarded in this new era or whether there are still some fields in which they can be more beneficial than bar charts. 
+William Playfair introduced the pie and bar charts in the early 1800s[, and by the turn of the next century, strong opinions had been publicized in textbooks and manuals, and statisticians began conducting experimental studies comparing the two.]{.svp}
+[These studies have contradictory results: ]{.svp}
+@vonhuhnFurtherStudiesGraphic1927 concludes that bar charts are much more useful and efficient in the majority of situations, even though pie charts have specific applications[, while @croxtonBarChartsCircle1927 found that pie charts may match or surpass them in certain situations.]{.svp}
+[Much later, @clevelandGraphicalPerceptionTheory1984 conducted experiments on simple graphical elements, stating that aligned length judgments are more accurate than judgments based on area or angle, with the implication that bar charts are more accurately perceived than pie charts.]{.svp}
+Their hierarchy of feature comprehension is often assumed to be experimentally derived, but the experiments presented in the papers [@clevelandGraphicalPerceptionTheory1984;@clevelandGraphicalPerceptionGraphical1985;@clevelandExperimentGraphicalPerception1986] only covered a few elements of this hierarchy.]{.svp}
 
-In the era of 80’s Cleveland and McGill's work on graphical perception provides a foundational framework for understanding how humans decode visual information in graphs. 
-In their 1984 study, they ranked perceptual tasks, identifying position along a common scale as the most accurate, while area-based judgments were deemed the least reliable. 
-They advocated for replacing less effective visualization types, such as pie charts, with alternatives like dot charts and framed rectangle charts to enhance perceptual accuracy. 
-Expanding on this, their 1985 paper applied these principles to scientific data visualization, introducing tasks like density and color saturation while highlighting innovations such as scatterplot smoothing and logarithmic scaling to uncover hidden data patterns. 
-The 1986 study experimentally validated their rankings, demonstrating that position and length consistently outperformed angle, slope, and area in accuracy, with distance between objects significantly influencing judgment.
-Across their research, they emphasized the importance of prioritizing high-accuracy encodings, particularly for tasks requiring quantitative precision. 
-Their recommendations included refining traditional graph designs to align with perceptual principles and improve interpretability
+[Here, we re-examine the historical literature surrounding the use of pie and bar charts, examining recommendations about the use of pie and bar charts, tracing these guidelines back to empirical studies, and evaluating whether the recommendations are well-supported by the studies.]{.svp}
+[We begin with an initial set of four studies from late 1920s and early 1930s: @eellsRelativeMeritsCircles1926, @croxtonBarChartsCircle1927, @vonhuhnFurtherStudiesGraphic1927, and @croxtonGraphicComparisonsBars1932.]{.svp}
+[We trace these studies forward in time, examining the claims made about the studies as well as the recommendations made in citing papers.]{.svp}
+[In addition, we lay out the different experimental designs used in each experimental study, with the goal of assessing how the design of each study might contribute to the ultimate results. Asking for absolute estimates of differences (A - B) likely gives the advantage to bar charts, while asking for part-to-whole estimates (A/(A+B)) would be expected to give the advantage to pie charts; asking for A/B ratio comparisons may produce yet a different result.]{.svp}
+[While these studies are the earliest systematic studies of statistical graphics we could locate, modern statistical graphics research might be said to date from Cleveland & McGill's work on perception of simple graphical elements; in order to include this work as well, we also look forward and backward from these papers, examining both cited papers and papers describing their work in subsequent research.]{.svp}
 
 # Purpose and Motivation
 
