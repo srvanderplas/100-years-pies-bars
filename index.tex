@@ -1,0 +1,439 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  10pt,
+  letterpaper,
+  twocolumn]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+  \setmainfont[]{Times New Roman}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\usepackage{sdss2020} % Uses Times Roman font (either newtx or times package)
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{algorithm, algorithmic}
+\usepackage[dvipsnames]{xcolor} % colors
+\newcommand{\mt}[1]{{\textcolor{blue}{#1}}}
+\newcommand{\svp}[1]{{\textcolor{RedOrange}{#1}}}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={100 years of Pies vs.~Bars},
+  pdfauthor={Maksuda Atkar Toma; Susan Vanderplas},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{100 years of Pies vs.~Bars}
+\author{
+Maksuda Atkar Toma\\
+Statistics Department, \\University of Nebraska, Lincoln\\
+{\tt \href{mailto:mtoma2@huskers.unl.edu}{mtoma2@huskers.unl.edu}}\\
+\\\And
+Susan Vanderplas\\
+Statistics Department, \\University of Nebraska, Lincoln\\
+{\tt \href{mailto:svanderplas2@unl.edu}{svanderplas2@unl.edu}}\\
+}
+\date{}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, enhanced, breakable, boxrule=0pt, interior hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+
+\hypertarget{historical-background}{%
+\section{Historical Background}\label{historical-background}}
+
+William Playfair introduced the pie and bar charts in the early
+1800s\svp{, and by the turn of the next century, strong opinions had
+been publicized in textbooks and manuals, and statisticians began
+conducting experimental studies comparing the two.} \svp{These studies
+have contradictory results:} Huhn (1927) concludes that bar charts are
+much more useful and efficient in the majority of situations, even
+though pie charts have specific applications\svp{, while Croxton and
+Stryker (1927) found that pie charts may match or surpass them in
+certain situations.} \svp{Much later, Cleveland and McGill (1984)
+conducted experiments on simple graphical elements, stating that aligned
+length judgments are more accurate than judgments based on area or
+angle, with the implication that bar charts are more accurately
+perceived than pie charts.} Their hierarchy of feature comprehension is
+often assumed to be experimentally derived, but the experiments
+presented in the papers (Cleveland and McGill 1984, 1985, 1986) only
+covered a few elements of this hierarchy.{]}\{.svp\}
+
+\svp{Here, we re-examine the historical literature surrounding the use
+of pie and bar charts, examining recommendations about the use of pie
+and bar charts, tracing these guidelines back to empirical studies, and
+evaluating whether the recommendations are well-supported by the
+studies.} \svp{We begin with an initial set of four studies from the
+late 1920s and early 1930s: Eells (1926), Croxton and Stryker (1927),
+Huhn (1927), and Croxton and Stein (1932).} \svp{We trace these studies
+forward in time, examining the claims made about the studies as well as
+the recommendations made in citing papers.} \svp{In addition, we lay out
+the different experimental designs used in each experimental study, with
+the goal of assessing how the design of each study might contribute to
+the ultimate results. Asking for absolute estimates of differences (A -
+B) likely gives the advantage to bar charts, while asking for
+part-to-whole estimates (A/(A+B)) would be expected to give the
+advantage to pie charts; asking for A/B ratio comparisons may produce
+yet a different result.} \svp{While these studies are the earliest
+systematic studies of statistical graphics we could locate, modern
+statistical graphics research might be said to date from Cleveland \&
+McGill's work on the perception of simple graphical elements; to include
+this work as well, we also look forward and backward from these papers,
+examining both cited papers and papers describing their work in
+subsequent research.}
+
+\hypertarget{purpose-and-motivation}{%
+\section{Purpose and Motivation}\label{purpose-and-motivation}}
+
+Visualizing quantitative data effectively is essential in
+decision-making, scientific research, and education. Graphical tools
+must convey data precisely while engaging users to ensure optimal
+understanding. Yet, disagreements persist about which chart types best
+balance clarity, accessibility, and accuracy. Motivated by the need for
+improved visual communication, this research synthesizes findings from
+decades of studies in graphical perception, including experimental
+evaluations and historical insights. It aims to explore the relative
+merits of widely used visualizations, including bar charts, pie charts,
+and hybrid formats like grables, (Hink, Eustace, and S. Wogalter 1998)
+which combine numerical tables with graphical clarity. The goal is to
+establish task-specific design principles and empower practitioners and
+educators to build more effective visual tools. (\textbf{Check this
+paragraph, took help from AI})
+
+We will try to find out the importance of understanding the historical
+context of graphical methods, highlighting how their development
+reflects broader trends in statistical communication. We want to explore
+how modern visualization software (e.g., Tableau, Power BI) aligns with
+Cleveland and McGill's perceptual task hierarchy. Assess whether newer
+tools mitigate the limitations of suboptimal encodings like area and
+angle.\\
+Another idea could be to\,investigate whether dynamic visualizations
+(e.g., interactive scatterplots, time-lapse animations) improve
+perceptual accuracy for traditionally low-ranking encodings such as area
+and slope.
+
+\hypertarget{problem}{%
+\section{Problem}\label{problem}}
+
+While charts like bar and pie graphs are staples of data communication,
+their utility varies widely depending on the context. Pie charts often
+appeal due to their simplicity and visual aesthetics but falter in
+scenarios requiring detailed quantitative comparisons due to their
+reliance on angular and area-based judgments, which humans inherently
+struggle to process accurately. Bar charts, on the other hand, excel in
+tasks requiring precision, as they leverage a common positional scale.
+However, they lack the visual immediacy that non-technical audiences may
+seek. Meanwhile, emerging formats like grables combine the precision of
+tables with graphical representation but are underexplored in practice.
+This research addresses these gaps, seeking to clarify how these
+visualizations perform across different cognitive and perceptual tasks.
+In this modern era where AI has become very available to make such kinds
+of charts within a minute, how do humans' perspectives change in
+different fields? \mt{\textbf{Paraphrased this section}}
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+This study draws upon seminal experiments, including Cleveland and
+McGill's hierarchy of graphical encodings and Eells' foundational
+comparisons of pie and bar charts. A detailed review of tasks---value
+retrieval, trend analysis, and comparisons---provides insights into the
+cognitive load and accuracy associated with each visualization type.
+Historical analysis traces the evolution of statistical graphics, from
+William Playfair's pioneering work in bar and pie charts to modern
+hybrid visualizations. Experimental findings are organized into a
+taxonomy ranking encodings like position, length, area, and color in
+terms of effectiveness and alignment with specific tasks.
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+This research highlights the importance of tailoring visualizations to
+specific tasks and user contexts. Bar charts, emphasizing positional
+accuracy, remain the gold standard for detailed analyses, while pie
+charts can serve as accessible tools for summarizing information.
+Grables represent a promising innovation, combining clarity with
+precision for complex data sets. By integrating historical perspectives
+with modern insights from graphical perception studies, this research
+provides a comprehensive roadmap for designing effective visual tools.
+Practitioners, educators, and researchers are encouraged to adopt these
+principles, ensuring their visualizations communicate data effectively
+and foster deeper engagement and understanding.
+
+This study emphasizes the relevance of designing visualizations for
+specific tasks and user settings. Bar charts, which emphasize positional
+accuracy, remain the gold standard for extensive analysis, although pie
+charts can be useful tools for summarizing information. Grables are a
+potential innovation that combines clarity and precision in big data
+sets. This study provides a complete roadmap for developing effective
+visual aids by combining historical viewpoints with contemporary
+insights from graphical perception studies.
+
+\mt{This article also investigates the relevance of human visual
+perception in current tools such as Tableau and PowerBI Practitioners,
+educators, and researchers are advised to follow these guidelines to
+ensure that their visualizations effectively communicate data while
+fostering deeper engagement and understanding.}
+
+\hypertarget{summary-from-olivias-note}{%
+\section{Summary from Olivia's note}\label{summary-from-olivias-note}}
+
+Eells (1926, 1927) found that pie charts (circles) were more accurate
+than bar charts when presenting simple distributions, such as 50-50 or
+25-75 relationships. However, bar charts were superior for more complex
+distributions and comparative tasks due to their linear scale, which
+facilitates comparisons across multiple diagrams. Accuracy was
+influenced by the arrangement of segments (e.g., circles with sections
+centered at specific angles were more straightforward to interpret).
+Vohn (1927) argued that bar charts offer advantages for tasks requiring
+comparisons across time series or multiple distributions, owing to their
+standard scale and ease of labeling, while circles are more suited for
+showing numerous components grouped into categories. Frederic and
+Croxton (1932) compared bars, squares, circles, and cubes for simple
+comparisons. They confirmed that bar charts yielded the most accurate
+estimates, outperforming circles, squares, and cubes. Squares and
+circles were comparable in accuracy, while cubes consistently performed
+the worst due to the challenge of representing three-dimensional volume
+in two-dimensional drawings. These findings emphasize that linear
+encodings (e.g., bars) are more effective than area- or volume-based
+encodings for precise quantitative judgments. Overall, the studies
+collectively demonstrate that the choice of visualization depends on the
+task and the data structure. Bars are preferable for comparisons and
+time-series data, while circles may be suitable for single distributions
+with grouped components. Visual aids, such as scales and labels, further
+enhance accuracy and usability.
+
+\hypertarget{summary-from-masons-note}{%
+\section{Summary from Mason's note}\label{summary-from-masons-note}}
+
+Studies on graphical perception reveal that position is the most
+accurate visual encoding method, followed by length and angle, with
+tasks involving area, volume, curvature, shading, and color saturation
+needing more reliability. Baird (1970) demonstrated that length is
+perceived more accurately than area and volume, which are often
+underestimated. Baird and Noma (1978) highlighted how visual cues, such
+as frames, improve accuracy by providing reference structures.
+Experiments comparing position and length judgments found that position
+tasks were significantly more accurate, with length judgments resulting
+in 40--250\% higher errors. Similarly, comparisons of position and angle
+judgments revealed that pie charts, which rely on angle encodings, are
+far less effective than bar charts, with position judgments being nearly
+twice as accurate and accounting for significantly fewer errors. Biases
+and outliers were common, with position accuracy declining as distances
+increased. These findings emphasize the need to avoid traditional
+visualizations like pie and divided bar charts, recommending
+alternatives such as dot charts or framed rectangular charts, which
+leverage position-based encodings to improve accuracy and comprehension.
+These insights underscore the importance of redesigning data
+visualizations to optimize perceptual accuracy and usability.
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-clevelandGraphicalPerceptionTheory1984}{}}%
+Cleveland, William S., and Robert McGill. 1984. {``Graphical Perception:
+Theory, Experimentation, and Application to the Development of Graphical
+Methods.''} \emph{Journal of the American Statistical Association} 79
+(387): 531--54. \url{https://doi.org/10.1080/01621459.1984.10478080}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-clevelandGraphicalPerceptionGraphical1985}{}}%
+---------. 1985. {``Graphical Perception and Graphical Methods for
+Analyzing Scientific Data.''} \emph{Science} 229 (4716): 828--33.
+\url{https://doi.org/10.1126/science.229.4716.828}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-clevelandExperimentGraphicalPerception1986}{}}%
+---------. 1986. {``An Experiment in Graphical Perception.''}
+\emph{International Journal of Man-Machine Studies} 25 (5): 491--500.
+\url{https://doi.org/10.1016/S0020-7373(86)80019-0}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-croxtonGraphicComparisonsBars1932}{}}%
+Croxton, Frederick E., and Harold Stein. 1932. {``Graphic Comparisons by
+Bars, Squares, Circles, and Cubes.''} \emph{Journal of the American
+Statistical Association} 27 (177): 54--60.
+
+\leavevmode\vadjust pre{\hypertarget{ref-croxtonBarChartsCircle1927}{}}%
+Croxton, Frederick E., and Roy E. Stryker. 1927. {``Bar Charts Versus
+Circle Diagrams.''} \emph{Journal of the American Statistical
+Association} 22 (160): 473--82. \url{https://doi.org/10.2307/2276829}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-eellsRelativeMeritsCircles1926}{}}%
+Eells, Walter Crosby. 1926. {``The Relative Merits of Circles and Bars
+for Representing Component Parts.''} \emph{Journal of the American
+Statistical Association} 21 (154): 119--32.
+\url{https://doi.org/10.2307/2277140}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hinkGrablesEnableExtraction1998}{}}%
+Hink, Jessica K, Jason K Eustace, and Michael S. Wogalter. 1998. {``Do
+Grables Enable the Extraction of Quantitative Information Better Than
+Pure Graphs or Tables?''} \emph{International Journal of Industrial
+Ergonomics} 22 (6): 439--47.
+\url{https://doi.org/10.1016/S0169-8141(97)00017-6}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-vonhuhnFurtherStudiesGraphic1927}{}}%
+Huhn, R. von. 1927. {``Further Studies in the Graphic Use of Circles and
+Bars: A Discussion of the Eell's Experiment.''} \emph{Journal of the
+American Statistical Association} 22 (157): 31--39.
+\url{https://doi.org/10.2307/2277346}.
+
+\end{CSLReferences}
+
+
+\bibliographystyle{sdss2020} % Please do not change the bibliography style
+
+\end{document}
