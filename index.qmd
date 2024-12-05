@@ -48,8 +48,22 @@ editor:
 
 # Historical Background
 
-William Playfair introduced the pie and bar charts in the early 1800s[, and by the turn of the next century, strong opinions had been publicized in textbooks and manuals, and statisticians began conducting experimental studies comparing the two.]{.svp}
-[These studies have contradictory results:]{.svp} @vonhuhnFurtherStudiesGraphic1927 concludes that bar charts are much more useful and efficient in the majority of situations, even though pie charts have specific applications[, while @croxtonBarChartsCircle1927 found that pie charts may match or surpass them in certain situations.]{.svp}
+William Playfair introduced the pie and bar charts in the early 1800s[, and by the turn of the next century, strong opinions about the effectiveness of alternative displays of the same data had been publicized in textbooks and manuals.]{.svp}
+[For instance, @eellsRelativeMeritsCircles1926 quotes two contemporary resources which discuss pie charts as "not a desirable form of presentation"  [@brintonGraphicMethodsPresenting1914] and more strongly, "an insult to a man's intelligence" [@karsten1923charts].]{.svp}
+[@brintonGraphicMethodsPresenting1914 even identifies that the "sector method" is common, but if horizontal bar methods were used more frequently, they would be preferred for both speed and accuracy.]{.svp}
+[@eellsRelativeMeritsCircles1926 also quotes an excerpt from @secristIntroductionStatisticalMethods1925, an introductory statistics textbook from 1925, which argues that pie charts require more cognitive effort to use accurately than a comparable stacked bar chart, calling pie diagrams "clumsy and defective" [p 184].]
+[These insights mirror today's status quo: pie charts are stubbornly common, even though many design guidelines recommend against their use [@ichartsmarketingdepartment4ProblemsPie2017;@holtzIssuePieChart2018] and a variety of empirical studies identify problems with circular data representations [@hofmannGraphicalTestsPower2012].]{.svp} 
+[@wickhamGraphicalCriticismHistorical2013 previously noted the prescience of design guidelines prior to empirical studies validating their recommendations across different types of visualizations. ]{.svp} 
+
+[Introspection is an incredibly powerful tool when applied to the design of statistical charts, and can lead to design guidelines that precede empirical tests but match their results. ]{.svp} 
+[However, empirical tests are also extremely important: Tufte's data-ink ratio is oft repeated, but empirical studies show that the relationship between minimalism and chart perception is much more complicated [@gillanMinimalismSyntaxGraphs1994a;@tufteVisualDisplayQuantitative2001;@parsonsDataVisualizationPractitioners2020].]{.svp}
+
+Interestingly, the question of pies and bars motivated some of the first empirical evaluations of charts, published in the Journal of the American Statistical Association: @eellsRelativeMeritsCircles1926, @vonhuhnFurtherStudiesGraphic1927, and @croxtonBarChartsCircle1927. 
+Experimenters approached the problem head-on, directly asking participants to estimate quantities from charts, and evaluated participants on accuracy, and in some cases, speed. 
+While more sophisticated testing methodologies have been developed over the past century [see][@vanderplasTestingStatisticalCharts2020][for a review], studies are still conducted today using direct estimation approaches [@vanderplasFramedReproducingRevisiting2019]. 
+
+
+[The initial studies of the question of pies and bars have contradictory results:]{.svp} @vonhuhnFurtherStudiesGraphic1927 concludes that bar charts are much more useful and efficient in the majority of situations, even though pie charts have specific applications[, while @croxtonBarChartsCircle1927 found that pie charts may match or surpass them in certain situations.]{.svp}
 [Much later, @clevelandGraphicalPerceptionTheory1984 conducted experiments on simple graphical elements, stating that aligned length judgments are more accurate than judgments based on area or angle, with the implication that bar charts are more accurately perceived than pie charts.]{.svp}
 [Their hierarchy of feature comprehension is often assumed to be experimentally derived, but the experiments presented in the papers [@clevelandGraphicalPerceptionTheory1984; @clevelandGraphicalPerceptionGraphical1985; @clevelandExperimentGraphicalPerception1986] only covered a few elements of this hierarchy.]{.svp}
 
@@ -57,8 +71,12 @@ William Playfair introduced the pie and bar charts in the early 1800s[, and by t
 [We begin with an initial set of four studies from the late 1920s and early 1930s: @eellsRelativeMeritsCircles1926, @croxtonBarChartsCircle1927, @vonhuhnFurtherStudiesGraphic1927, and @croxtonGraphicComparisonsBars1932.]{.svp}
 [We trace these studies forward in time, examining the claims made about the studies as well as the recommendations made in citing papers.]{.svp}
 [In addition, we lay out the different experimental designs used in each experimental study, with the goal of assessing how the design of each study might contribute to the ultimate results.]{.svp}
-[They demonstrated that the choice of visualization depends on the task and the data structure.
-Bars are preferable for comparisons and time-series data, while circles may be suitable for single distributions with grouped components.]{.mt}
+
+# Initial Studies
+<!-- XXX Who XXX?? -->
+<!-- [They demonstrated that the choice of visualization depends on the task and the data structure. -->
+<!-- Bars are preferable for comparisons and time-series data, while circles may be suitable for single distributions with grouped components.]{.mt} -->
+
 [Eells (1926, 1927) found that pie charts (circles) were more accurate than bar charts when presenting simple distributions, such as 50-50 or 25-75 relationships. However, bar charts were superior for more complex distributions and comparative tasks due to their linear scale, which facilitates comparisons across multiple diagrams.]{.mt}
 [Vohn (1927) argued that bar charts offer advantages for tasks requiring comparisons across time series or multiple distributions, owing to their standard scale and ease of labeling, while circles are more suited for showing numerous components grouped into categories.
 Frederic and Croxton (1932) compared bars, squares, circles, and cubes for simple comparisons.
