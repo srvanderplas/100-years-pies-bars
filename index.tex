@@ -22,7 +22,7 @@
 \usepackage{lmodern}
 \ifPDFTeX\else  
     % xetex/luatex font selection
-  \setmainfont[]{Times New Roman}
+    \setmainfont[]{Times New Roman}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -44,14 +44,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -78,28 +92,38 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{sdss2020} % Uses Times Roman font (either newtx or times package)
@@ -111,10 +135,6 @@
 \usepackage[dvipsnames]{xcolor} % colors
 \newcommand{\mt}[1]{{\textcolor{blue}{#1}}}
 \newcommand{\svp}[1]{{\textcolor{RedOrange}{#1}}}
-\makeatletter
-\makeatother
-\makeatletter
-\makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -151,28 +171,21 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
-\makeatother
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={100 years of Pies vs.~Bars},
-  pdfauthor={Maksuda Atkar Toma; Susan Vanderplas},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -180,250 +193,226 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
+
 \title{100 years of Pies vs.~Bars}
-\author{
-Maksuda Atkar Toma\\
-Statistics Department, \\University of Nebraska, Lincoln\\
-{\tt \href{mailto:mtoma2@huskers.unl.edu}{mtoma2@huskers.unl.edu}}\\
-\\\And
-Susan Vanderplas\\
-Statistics Department, \\University of Nebraska, Lincoln\\
-{\tt \href{mailto:svanderplas2@unl.edu}{svanderplas2@unl.edu}}\\
-}
+\vspace{-1in}
 \date{}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, sharp corners, interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, frame hidden, breakable]}{\end{tcolorbox}}\fi
 
-\hypertarget{historical-background}{%
-\section{Historical Background}\label{historical-background}}
 
-William Playfair introduced the pie and bar charts in the early
-1800s\svp{, and by the turn of the next century, strong opinions had
-been publicized in textbooks and manuals, and statisticians began
-conducting experimental studies comparing the two.} \svp{These studies
-have contradictory results:} Huhn (1927) concludes that bar charts are
-much more useful and efficient in the majority of situations, even
-though pie charts have specific applications\svp{, while Croxton and
-Stryker (1927) found that pie charts may match or surpass them in
-certain situations.} \svp{Much later, Cleveland and McGill (1984)
-conducted experiments on simple graphical elements, stating that aligned
-length judgments are more accurate than judgments based on area or
-angle, with the implication that bar charts are more accurately
-perceived than pie charts.} \svp{Their hierarchy of feature
-comprehension is often assumed to be experimentally derived, but the
-experiments presented in the papers (Cleveland and McGill 1984, 1985,
-1986) only covered a few elements of this hierarchy.}
+William Playfair introduced the pie and bar charts in the early 1800s,
+and by the turn of the next century, strong opinions about the
+effectiveness of alternative displays of the same data had been
+publicized in textbooks and manuals. For instance, Eells (1926) quotes
+two contemporary resources which discuss pie charts as ``not a desirable
+form of presentation'' (Brinton 1914) and more strongly, ``an insult to
+a man's intelligence'' (Karsten 1923). Brinton (1914) even identifies
+that the ``sector method'' is common, but if horizontal bar methods were
+used more frequently, they would be preferred for both speed and
+accuracy. Eells (1926) also quotes an excerpt from an introductory
+statistics textbook (Secrist 1925), which argues that pie charts require
+more cognitive effort to use accurately than a comparable stacked bar
+chart, calling pie diagrams ``clumsy and defective''. These insights
+mirror today's status quo: pie charts are stubbornly common, even though
+many design guidelines recommend against their use and a variety of
+empirical studies identify problems with circular data representations .
+Wickham (2013) previously noted the prescience of design guidelines
+prior to empirical studies validating their recommendations across
+different types of visualizations.
 
-\svp{Here, we re-examine the historical literature surrounding the use
-of pie and bar charts, examining recommendations about the use of pie
-and bar charts, tracing these guidelines back to empirical studies, and
-evaluating whether the recommendations are well-supported by the
-studies.} \svp{We begin with an initial set of four studies from the
-late 1920s and early 1930s: Eells (1926), Croxton and Stryker (1927),
-Huhn (1927), and Croxton and Stein (1932).} \svp{We trace these studies
-forward in time, examining the claims made about the studies as well as
-the recommendations made in citing papers.} \svp{In addition, we lay out
-the different experimental designs used in each experimental study, with
-the goal of assessing how the design of each study might contribute to
-the ultimate results.} \mt{They demonstrated that the choice of
-visualization depends on the task and the data structure. Bars are
-preferable for comparisons and time-series data, while circles may be
-suitable for single distributions with grouped components.} \mt{Eells
-(1926, 1927) found that pie charts (circles) were more accurate than bar
-charts when presenting simple distributions, such as 50-50 or 25-75
-relationships. However, bar charts were superior for more complex
-distributions and comparative tasks due to their linear scale, which
-facilitates comparisons across multiple diagrams.} \mt{Vohn (1927)
-argued that bar charts offer advantages for tasks requiring comparisons
-across time series or multiple distributions, owing to their standard
-scale and ease of labeling, while circles are more suited for showing
-numerous components grouped into categories. Frederic and Croxton (1932)
-compared bars, squares, circles, and cubes for simple comparisons. They
-confirmed that bar charts yielded the most accurate estimates,
-outperforming circles, squares, and cubes. Squares and circles were
-comparable in accuracy, while cubes consistently performed the worst due
-to the challenge of representing three-dimensional volume in
-two-dimensional drawings. These findings emphasize that linear encodings
-(e.g., bars) are more effective than area- or volume-based encodings for
-precise quantitative judgments.} \svp{Asking for absolute estimates of
-differences (A - B) likely gives the advantage to bar charts, while
-asking for part-to-whole estimates (A/(A+B)) would be expected to give
-the advantage to pie charts; asking for A/B ratio comparisons may
-produce yet a different result.}
+\subsection{The Dawn of Empirical
+Graphics}\label{the-dawn-of-empirical-graphics}
 
-\mt{In late 70's and 80's Studies on graphical perception reveal that
-position is the most accurate visual encoding method, followed by length
-and angle, with tasks involving area, volume, curvature, shading, and
-color saturation needing more reliability. Baird (1970) demonstrated
-that length is perceived more accurately than area and volume, which are
-often underestimated. Baird and Noma (1978) highlighted how visual cues,
-such as frames, improve accuracy by providing reference structures.
-Experiments comparing position and length judgments found that position
-tasks were significantly more accurate, with length judgments resulting
-in 40--250\% higher errors. Similarly, comparisons of position and angle
-judgments revealed that pie charts, which rely on angle encodings, are
-far less effective than bar charts, with position judgments being nearly
-twice as accurate and accounting for significantly fewer errors. Biases
-and outliers were common, with position accuracy declining as distances
-increased. These findings emphasize the need to avoid traditional
-visualizations like pie and divided bar charts, recommending
-alternatives such as dot charts or framed rectangular charts, which
-leverage position-based encodings to improve accuracy and comprehension.
-These insights underscore the importance of redesigning data
-visualizations to optimize perceptual accuracy and usability.}
+Interestingly, the question of pies and bars motivated some of the first
+empirical evaluations of charts, published in the Journal of the
+American Statistical Association: Eells (1926), von Huhn (1927), and
+Croxton and Stryker (1927). Experimenters approached the problem
+head-on, directly asking participants to estimate quantities from
+charts, and evaluated participants on accuracy, and in some cases,
+speed. While more sophisticated testing methodologies have been
+developed over the past century (Vanderplas, Cook, and Hofmann 2020),
+studies are still conducted today using direct estimation approaches
+(VanderPlas, Ryan, and Hofmann 2019). Now as then, the phrasing of
+direct estimation questions is of primary importance: a simple
+mathematical transformation of the estimated quantity can have an
+outsized effect on the results.
 
-\svp{While these studies are the earliest systematic studies of
-statistical graphics we could locate, modern statistical graphics
-research might be said to date from Cleveland \& McGill's work on the
-perception of simple graphical elements; to include this work as well,
-we also look forward and backward from these papers, examining both
-cited papers and papers describing their work in subsequent research.}
+The initial studies of the question of pies and bars failed to identify
+a clear ``best chart'' across all situations, or even to clearly
+identify in which situations pie charts or bar charts should be
+preferred. Eells (1926) found that pie charts were read as accurately as
+bar charts and with comparable speed. The simplified nature of the
+experiment attracted critiques from von Huhn (1927); attached to these
+criticisms is a short study previously run by Croxton which examined
+estimates of the ratio between smaller and larger sectors of
+two-category pie and bar charts; these contributions will be addressed
+separately even though they are often cited as a single paper, even
+within the JASA records. von Huhn (1927)'s paper provides several
+examples which highlight concerns with the Eells study, and argues that
+while pie charts may be better in certain simple situations, bar charts
+are much more extensible and facilitate more advanced comparisons, but
+does not include any experimental studies. Croxton's early experimental
+data (attached to von Huhn (1927)) had a larger number of participants
+than Eells (1926), but only tested two-category charts with only two
+proportions: .25 and .4. In addition, Croxton's study elicited estimates
+from participants as \(A/B\) comparisons, where \(A + B = 1\), while
+Eells elicited estimates for \(A\) and \(B\) separately. This multi-year
+back-and-forth conversation is interesting in part because it pinpoints
+an early example of experimental statistical graphics as a discipline of
+interest to statisticians for both personal investigation and as an
+audience for the results.
 
-\hypertarget{purpose-and-motivation}{%
-\section{Purpose and Motivation}\label{purpose-and-motivation}}
+Subsequently, Croxton and Stryker (1927) published additional data
+assessing accuracy of estimates from pie and bar charts, varying number
+of categories and orientation/alignment of sections. Croxton and Stryker
+(1927) found that pie charts matched or surpassed bar charts in most
+situations, across different scale alignment and in charts with up to 5
+categories (though at 5 categories, differences were not statistically
+significant). The final paper in this early set of comparisons was
+Croxton and Stein (1932), which examined a variety of representations of
+proportional data, but outside the context of a statistical chart; the
+experimental stimuli, while applicable to charts, show a focus on
+general perception (though published in JASA).
 
-Visualizing quantitative data effectively is essential in
-decision-making, scientific research, and education. Graphical tools
-must convey data precisely while engaging users to ensure optimal
-understanding. Yet, disagreements persist about which chart types best
-balance clarity, accessibility, and accuracy. Motivated by the need for
-improved visual communication, this research synthesizes findings from
-decades of studies in graphical perception, including experimental
-evaluations and historical insights. It aims to explore the relative
-merits of widely used visualizations, including bar charts, pie charts,
-and hybrid formats like grables, (Hink, Eustace, and S. Wogalter 1998)
-which combine numerical tables with graphical clarity. The goal is to
-establish task-specific design principles and empower practitioners and
-educators to build more effective visual tools. (\textbf{Check this
-paragraph, took help from AI})
+Experimental graphics studies seem to have largely gone unreported (if
+they were conducted) between 1932 and the 1980s, particularly in
+statistical publications, though the issue of pies and bars occasionally
+pops up during this period in other disciplines.
 
-We will try to find out the importance of understanding the historical
-context of graphical methods, highlighting how their development
-reflects broader trends in statistical communication. We want to explore
-how modern visualization software (e.g., Tableau, Power BI) aligns with
-Cleveland and McGill's perceptual task hierarchy. Assess whether newer
-tools mitigate the limitations of suboptimal encodings like area and
-angle.\\
-Another idea could be to\,investigate whether dynamic visualizations
-(e.g., interactive scatterplots, time-lapse animations) improve
-perceptual accuracy for traditionally low-ranking encodings such as area
-and slope.
+\subsection{Modern Experimental
+Graphics}\label{modern-experimental-graphics}
 
-\hypertarget{problem}{%
-\section{Problem}\label{problem}}
+Much later, Cleveland and McGill (1984), a statistician and a
+psychologist by training, respectively, conducted experiments on simple
+graphical elements. These experiments were presented as supporting a
+hierarchy of graphical perception which evolved over the course of the
+sequence of studies. This ranking indicates that aligned length
+judgments are more accurate than judgments based on area or angle, with
+the implication that bar charts are more accurately perceived than pie
+charts. While the full hierarchy of feature comprehension is often
+assumed to be experimentally derived, the experiments presented in the
+series of Cleveland \& McGill papers only inform a few elements of this
+hierarchy. As in the late 1920s, the combination of introspection based
+reasoning and a sequence of simple experiments did not go uncontested.
+Spence and Lewandowsky (1991) (both psychologists) used forced-choice
+questions of the form ``which is bigger, A or B+C'' to investigate the
+accuracy of pie and bar charts for making part-to-whole comparisons. The
+later studies show more of an interdisciplinary conversation around data
+displays, which have become a general tool not limited to statisticians.
+As a result, the literature becomes fragmented; studies are conducted
+across different disciplines, with different methods, elicitation
+questions, protocols, and ultimately, different conclusions.
 
-While charts like bar and pie graphs are staples of data communication,
-their utility varies widely depending on the context. Pie charts often
-appeal due to their simplicity and visual aesthetics but falter in
-scenarios requiring detailed quantitative comparisons due to their
-reliance on angular and area-based judgments, which humans inherently
-struggle to process accurately. Bar charts, on the other hand, excel in
-tasks requiring precision, as they leverage a common positional scale.
-However, they lack the visual immediacy that non-technical audiences may
-seek. Meanwhile, emerging formats like grables combine the precision of
-tables with graphical representation but are underexplored in practice.
-This research addresses these gaps, seeking to clarify how these
-visualizations perform across different cognitive and perceptual tasks.
-In this modern era where AI has become very available to make such kinds
-of charts within a minute, how do humans' perspectives change in
-different fields? \mt{\textbf{Paraphrased this section}}
+\begin{figure}
 
-\hypertarget{methods}{%
-\section{Methods}\label{methods}}
+\centering{
 
-This study draws upon seminal experiments, including Cleveland and
-McGill's hierarchy of graphical encodings and Eells' foundational
-comparisons of pie and bar charts. A detailed review of tasks---value
-retrieval, trend analysis, and comparisons---provides insights into the
-cognitive load and accuracy associated with each visualization type.
-Historical analysis traces the evolution of statistical graphics, from
-William Playfair's pioneering work in bar and pie charts to modern
-hybrid visualizations. Experimental findings are organized into a
-taxonomy ranking encodings like position, length, area, and color in
-terms of effectiveness and alignment with specific tasks.
+\includegraphics{pie-type-example.png}
 
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+}
 
-This research highlights the importance of tailoring visualizations to
-specific tasks and user contexts. Bar charts, emphasizing positional
-accuracy, remain the gold standard for detailed analyses, while pie
-charts can serve as accessible tools for summarizing information.
-Grables represent a promising innovation, combining clarity with
-precision for complex data sets. By integrating historical perspectives
-with modern insights from graphical perception studies, this research
-provides a comprehensive roadmap for designing effective visual tools.
-Practitioners, educators, and researchers are encouraged to adopt these
-principles, ensuring their visualizations communicate data effectively
-and foster deeper engagement and understanding.
+\caption{\label{fig-elicitation}Different elicitation methods used to
+assess accuracy of pie chart estimates.}
 
-This study emphasizes the relevance of designing visualizations for
-specific tasks and user settings. Bar charts, which emphasize positional
-accuracy, remain the gold standard for extensive analysis, although pie
-charts can be useful tools for summarizing information. Grables are a
-potential innovation that combines clarity and precision in big data
-sets. This study provides a complete roadmap for developing effective
-visual aids by combining historical viewpoints with contemporary
-insights from graphical perception studies.
+\end{figure}%
 
-\mt{This article also investigates the relevance of human visual
-perception in current tools such as Tableau and PowerBI Practitioners,
-educators, and researchers are advised to follow these guidelines to
-ensure that their visualizations effectively communicate data while
-fostering deeper engagement and understanding.}
+\subsection{Scope and Aims}\label{scope-and-aims}
 
-\hypertarget{refs}{}
+In this study, we re-examine the historical literature surrounding the
+use of pie and bar charts, including heuristics as well as empirical
+studies. We trace guidelines back to experimental studies, where
+possible, and examine whether justifications based on experimental
+studies are in fact directly supported by those studies. We begin with
+an initial set of four JASA papers from the late 1920s and early 1930s:
+Eells (1926), Croxton and Stryker (1927), von Huhn (1927), and Croxton
+and Stein (1932). We trace these studies forward in time, examining
+papers which cite these studies, summaries of the original studies, and
+any additional information provided relevant to pie and bar charts. In
+addition, we specifically assess the different designs used in each
+experimental study, examining how the type of elicitation method impacts
+the results, as shown in Figure~\ref{fig-elicitation}. Synthesizing
+these results, we use the fundamental question of ``which is better,
+pies or bars?'' to examine the history of experimental graphics and
+graphical design guidelines.{]}\{.svp\}
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-clevelandGraphicalPerceptionTheory1984}{}}%
+\bibitem[\citeproctext]{ref-brintonGraphicMethodsPresenting1914}
+Brinton, Willard Cope. 1914. \emph{Graphic Methods for Presenting
+Facts}. New York, The Engineering Magazine Company.
+\url{http://archive.org/details/graphicmethodsfo00brinrich}.
+
+\bibitem[\citeproctext]{ref-clevelandGraphicalPerceptionTheory1984}
 Cleveland, William S., and Robert McGill. 1984. {``Graphical Perception:
 Theory, Experimentation, and Application to the Development of Graphical
 Methods.''} \emph{Journal of the American Statistical Association} 79
 (387): 531--54. \url{https://doi.org/10.1080/01621459.1984.10478080}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-clevelandGraphicalPerceptionGraphical1985}{}}%
----------. 1985. {``Graphical Perception and Graphical Methods for
-Analyzing Scientific Data.''} \emph{Science} 229 (4716): 828--33.
-\url{https://doi.org/10.1126/science.229.4716.828}.
-
-\leavevmode\vadjust pre{\hypertarget{ref-clevelandExperimentGraphicalPerception1986}{}}%
----------. 1986. {``An Experiment in Graphical Perception.''}
-\emph{International Journal of Man-Machine Studies} 25 (5): 491--500.
-\url{https://doi.org/10.1016/S0020-7373(86)80019-0}.
-
-\leavevmode\vadjust pre{\hypertarget{ref-croxtonGraphicComparisonsBars1932}{}}%
+\bibitem[\citeproctext]{ref-croxtonGraphicComparisonsBars1932}
 Croxton, Frederick E., and Harold Stein. 1932. {``Graphic Comparisons by
 Bars, Squares, Circles, and Cubes.''} \emph{Journal of the American
 Statistical Association} 27 (177): 54--60.
 
-\leavevmode\vadjust pre{\hypertarget{ref-croxtonBarChartsCircle1927}{}}%
+\bibitem[\citeproctext]{ref-croxtonBarChartsCircle1927}
 Croxton, Frederick E., and Roy E. Stryker. 1927. {``Bar Charts Versus
 Circle Diagrams.''} \emph{Journal of the American Statistical
 Association} 22 (160): 473--82. \url{https://doi.org/10.2307/2276829}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-eellsRelativeMeritsCircles1926}{}}%
+\bibitem[\citeproctext]{ref-eellsRelativeMeritsCircles1926}
 Eells, Walter Crosby. 1926. {``The Relative Merits of Circles and Bars
 for Representing Component Parts.''} \emph{Journal of the American
 Statistical Association} 21 (154): 119--32.
 \url{https://doi.org/10.2307/2277140}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hinkGrablesEnableExtraction1998}{}}%
-Hink, Jessica K, Jason K Eustace, and Michael S. Wogalter. 1998. {``Do
-Grables Enable the Extraction of Quantitative Information Better Than
-Pure Graphs or Tables?''} \emph{International Journal of Industrial
-Ergonomics} 22 (6): 439--47.
-\url{https://doi.org/10.1016/S0169-8141(97)00017-6}.
+\bibitem[\citeproctext]{ref-karsten1923charts}
+Karsten, K. G. 1923. \emph{Charts and {Graphs}: {An Introduction} to
+{Graphic Methods} in the {Control} and {Analysis} of {Statistics}}.
+Prentice-Hall, Incorporated.
+\url{https://books.google.com/books?id=DNc1AAAAIAAJ}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-vonhuhnFurtherStudiesGraphic1927}{}}%
-Huhn, R. von. 1927. {``Further Studies in the Graphic Use of Circles and
+\bibitem[\citeproctext]{ref-secristIntroductionStatisticalMethods1925}
+Secrist, Horace. 1925. \emph{An {Introduction} to {Statistical Methods}:
+{A Textbook} for {College Students}, a {Manual} for {Statisticians} and
+{Business Executives}}. Macmillan.
+\url{https://www.google.com/books/edition/An_Introduction_to_Statistical_Methods/cuUBAAAAMAAJ?hl=en}.
+
+\bibitem[\citeproctext]{ref-spenceDisplayingProportionsPercentages1991}
+Spence, I., and S. Lewandowsky. 1991. {``Displaying Proportions and
+Percentages.''} \emph{Applied Cognitive Psychology} 5 (1): 61--77.
+\url{https://doi.org/10.1002/acp.2350050106}.
+
+\bibitem[\citeproctext]{ref-vanderplasTestingStatisticalCharts2020}
+Vanderplas, Susan, Dianne Cook, and Heike Hofmann. 2020. {``Testing
+{Statistical Charts}: {What Makes} a {Good Graph}?''} \emph{Annual
+Review of Statistics and Its Application} 7 (1): 61--88.
+\url{https://doi.org/10.1146/annurev-statistics-031219-041252}.
+
+\bibitem[\citeproctext]{ref-vanderplasFramedReproducingRevisiting2019}
+VanderPlas, Susan, Goluch C Ryan, and Heike Hofmann. 2019. {``Framed!
+{Reproducing} and {Revisiting} 150-{Year-Old Charts}.''} \emph{Journal
+of Computational and Graphical Statistics} 28 (3): 620--34.
+\url{https://doi.org/10.1080/10618600.2018.1562937}.
+
+\bibitem[\citeproctext]{ref-vonhuhnFurtherStudiesGraphic1927}
+von Huhn, R. 1927. {``Further Studies in the Graphic Use of Circles and
 Bars: A Discussion of the Eell's Experiment.''} \emph{Journal of the
 American Statistical Association} 22 (157): 31--39.
 \url{https://doi.org/10.2307/2277346}.
+
+\bibitem[\citeproctext]{ref-wickhamGraphicalCriticismHistorical2013}
+Wickham, Hadley. 2013. {``Graphical {Criticism}: {Some Historical
+Notes}.''} \emph{Journal of Computational and Graphical Statistics} 22
+(1): 38--44. \url{https://doi.org/10.1080/10618600.2012.761140}.
 
 \end{CSLReferences}
 
 
 \bibliographystyle{sdss2020} % Please do not change the bibliography style
+
 
 \end{document}
