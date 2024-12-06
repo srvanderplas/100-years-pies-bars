@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="11.847819in"
+   height="10.29577in"
+   viewBox="0 0 236.95638 205.91539"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="pie-type-example.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="in"
+     showgrid="true"
+     inkscape:zoom="0.81802549"
+     inkscape:cx="210.2624"
+     inkscape:cy="580.6665"
+     inkscape:window-width="2256"
+     inkscape:window-height="1445"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       units="in"
+       spacingx="0.2"
+       spacingy="0.2"
+       originx="-0.61671948"
+       originy="187.79125" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="slice"
+       start_point="126.99999,14"
+       end_point="126.99999,74"
+       center_point="126.99999,44"
+       id="path-effect2088"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       allow_transforms="true" />
+    <inkscape:path-effect
+       effect="slice"
+       start_point="126.99999,14"
+       end_point="126.99999,74"
+       center_point="126.99999,44"
+       id="path-effect2034"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       allow_transforms="true" />
+    <inkscape:path-effect
+       effect="slice"
+       start_point="126.99999,14"
+       end_point="126.99999,74"
+       center_point="126.99999,44"
+       id="path-effect644"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       allow_transforms="true" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-85.616718,47.791255)">
+    <g
+       id="g2516"
+       transform="rotate(135,140.0401,40.642791)" />
+    <g
+       id="g3830">
+      <g
+         id="g3749"
+         transform="translate(-67.763301,30.608284)">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="215.29739"
+           y="15.229209"
+           id="text2815"><tspan
+             sodipodi:role="line"
+             style="text-align:end;text-anchor:end;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="215.29739"
+             y="15.229209"
+             id="tspan2817">A =</tspan><tspan
+             sodipodi:role="line"
+             style="text-align:end;text-anchor:end;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="218.76405"
+             y="31.895834"
+             id="tspan3723">B = </tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="224.07262"
+           y="22.795856"
+           id="text2827"><tspan
+             sodipodi:role="line"
+             id="tspan2825"
+             style="stroke-width:0.208333"
+             x="224.07262"
+             y="22.795856">Eells (1926)</tspan></text>
+      </g>
+      <g
+         id="g3742"
+         transform="translate(-67.763301,32.455425)">
+        <g
+           id="g3777">
+          <g
+             id="g3787"
+             transform="translate(0,-8.3333123)">
+            <text
+               xml:space="preserve"
+               style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+               x="215.88406"
+               y="77.673286"
+               id="text2821"><tspan
+                 sodipodi:role="line"
+                 id="tspan2819"
+                 style="text-align:end;text-anchor:end;stroke-width:0.208333"
+                 x="215.88406"
+                 y="77.673286">A/B =</tspan></text>
+            <text
+               xml:space="preserve"
+               style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+               x="224.49928"
+               y="60"
+               id="text2831"><tspan
+                 sodipodi:role="line"
+                 id="tspan2829"
+                 style="stroke-width:0.208333"
+                 x="224.49928"
+                 y="60">Croxton</tspan><tspan
+                 sodipodi:role="line"
+                 style="stroke-width:0.208333"
+                 x="224.49928"
+                 y="76.666626"
+                 id="tspan3779">Croxton &amp; Stryker (1927)</tspan><tspan
+                 sodipodi:role="line"
+                 style="stroke-width:0.208333"
+                 x="224.49928"
+                 y="93.333252"
+                 id="tspan3770">Cleveland &amp; McGill (198x)</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3736"
+         transform="translate(-67.763301,62.000008)">
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:end;text-anchor:end;fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="215.61739"
+           y="62.513386"
+           id="text2733"><tspan
+             sodipodi:role="line"
+             style="text-align:end;text-anchor:end;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="215.61739"
+             y="62.513386"
+             id="tspan2735" /><tspan
+             sodipodi:role="line"
+             style="text-align:end;text-anchor:end;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="215.61739"
+             y="79.180008"
+             id="tspan2743">A &gt; B?</tspan><tspan
+             sodipodi:role="line"
+             style="text-align:end;text-anchor:end;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="215.61739"
+             y="95.846634"
+             id="tspan3715">A + B &gt; C?</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="224.49928"
+           y="85.999992"
+           id="text2835"><tspan
+             sodipodi:role="line"
+             id="tspan2833"
+             style="stroke-width:0.208333"
+             x="224.49928"
+             y="85.999992">Spence (1991)</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g3806"
+       transform="translate(-19.278955,-3.6870877)">
+      <g
+         id="g3757"
+         transform="translate(-3.16666,-35.999919)">
+        <path
+           id="circle2518"
+           style="fill:#e6e6e6;stroke:#000000;stroke-width:0.208333"
+           d="M 118.72558,53.440755 144.16666,28.000081 118.72558,2.5590007 A 36,36 0 0 0 108.1665,28.000081 36,36 0 0 0 118.72558,53.440755 Z" />
+        <path
+           id="path2588"
+           style="fill:#999999;stroke:#000000;stroke-width:0.208333"
+           d="M 144.16666,-8.0000814 A 36,36 0 0 0 118.72558,2.5590007 l 25.44108,25.4410803 -25.44108,25.440674 a 36,36 0 0 0 25.44108,10.559082 36,36 0 0 0 36.00016,-35.999756 36,36 0 0 0 -36.00016,-36.0001624 z" />
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="117.07079"
+           y="31.895834"
+           id="text2593"><tspan
+             sodipodi:role="line"
+             id="tspan2591"
+             style="font-size:13.3333px;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="117.07079"
+             y="31.895834">A</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="157.07083"
+           y="31.895834"
+           id="text2597"><tspan
+             sodipodi:role="line"
+             id="tspan2595"
+             style="font-size:13.3333px;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="157.07083"
+             y="31.895834">B</tspan></text>
+      </g>
+      <g
+         id="g3768"
+         transform="translate(72.58317,-111.05962)">
+        <path
+           id="circle2244"
+           style="fill:#e6e6e6;stroke:#000000;stroke-width:0.208333"
+           d="m 115.43762,124.15678 29.12476,-21.16007 -29.12476,-21.160079 a 36,36 0 0 0 -6.8754,21.160079 36,36 0 0 0 6.8754,21.16007 z" />
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="117.83218"
+           y="107.7767"
+           id="text2334"><tspan
+             sodipodi:role="line"
+             id="tspan2332"
+             style="font-size:13.3333px;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="117.83218"
+             y="107.7767">A</tspan></text>
+        <path
+           id="path3591"
+           style="fill:#cccccc;stroke:#000000;stroke-width:0.208333"
+           d="m 115.31334,81.958589 29.12447,21.160461 11.12438,-34.238104 a 36,36 0 0 0 -22.24904,-7.2e-5 36,36 0 0 0 -17.99981,13.077715 z" />
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="134.87067"
+           y="85.74453"
+           id="text2442"><tspan
+             sodipodi:role="line"
+             id="tspan2440"
+             style="font-size:13.3333px;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="134.87067"
+             y="85.74453">B</tspan></text>
+        <path
+           id="path3593"
+           style="fill:#999999;stroke:#000000;stroke-width:0.208333"
+           d="M 155.54056,68.762803 144.41667,103 115.29191,124.16008 c 6.77346,9.32311 17.60086,14.84005 29.12476,14.84009 19.88238,9e-5 36.00025,-16.11779 36.00016,-36.00017 -4.9e-4,-15.59608 -10.04342,-29.418137 -24.8763,-34.237196 z"
+           sodipodi:nodetypes="cccsccc" />
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke:#000000;stroke-width:0.208333"
+           x="155.93373"
+           y="116.97235"
+           id="text3600"><tspan
+             sodipodi:role="line"
+             id="tspan3598"
+             style="font-size:13.3333px;fill:#000000;stroke:#000000;stroke-width:0.208333"
+             x="155.93373"
+             y="116.97235">C</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
