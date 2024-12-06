@@ -76,7 +76,6 @@ This multi-year back-and-forth conversation is interesting in part because it pi
 Subsequently, @croxtonBarChartsCircle1927 published additional data assessing accuracy of estimates from pie and bar charts, varying number of categories and orientation/alignment of sections. 
 @croxtonBarChartsCircle1927 found that pie charts matched or surpassed bar charts in most situations, across different scale alignment and in charts with up to 5 categories (though at 5 categories, differences were not statistically significant).
 The final paper in this early set of comparisons was @croxtonGraphicComparisonsBars1932, which examined a variety of representations of proportional data, but outside the context of a statistical chart; the experimental stimuli, while applicable to charts, show a focus on general perception (though published in JASA).
-
 Experimental graphics studies seem to have largely gone unreported (if they were conducted) between 1932 and the 1980s, particularly in statistical publications, though the issue of pies and bars occasionally pops up during this period in other disciplines. 
 
 ## Modern Experimental Graphics 
@@ -97,7 +96,7 @@ In this study, we re-examine the historical literature surrounding the use of pi
 We begin with an initial set of four JASA papers from the late 1920s and early 1930s: @eellsRelativeMeritsCircles1926, @croxtonBarChartsCircle1927, @vonhuhnFurtherStudiesGraphic1927, and @croxtonGraphicComparisonsBars1932.
 We trace these studies forward in time, examining papers which cite these studies, summaries of the original studies, and any additional information provided relevant to pie and bar charts.
 In addition, we specifically assess the different designs used in each experimental study, examining how the type of elicitation method impacts the results, as shown in @fig-elicitation.
-Synthesizing these results, we use the fundamental question of "which is better, pies or bars?" to examine the history of experimental graphics and graphical design guidelines.]{.svp}
+Synthesizing these results, we use the fundamental question of "which is better, pies or bars?" to examine the history of experimental graphics and graphical design guidelines.
 
 
 
