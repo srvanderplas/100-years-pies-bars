@@ -1,0 +1,52 @@
+---
+title: "To-do List"
+author: "Maksuda Toma, Susan Vanderplas"
+date: "2025-02-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 📌 Project To-Do List
+
+## 🚀 Phase 1: Reading Papers & Taking Notes (By April 8)
+- [x] **Done Until Cleveland 1984**  
+- [ ] **02/25**: Cleveland 1985, 1986  
+- [ ] **03/04**: Cleveland 1987,Spence 1991  
+- [ ] **03/11**: Hink 1998, Friel 2001  
+- [ ] **03/18**: Collier 2008, Friendly 2008  
+- [ ] **03/25**: Valvarde 2013, Harri 2014 
+- [ ] **04/01**: Quadri 2022,  
+- [ ] **04/08**:  
+- [ ] **04/15**: Review notes and finalize understanding  
+
+---
+
+## 📊 Phase 2: Summarize the Materials
+- [ ] Create topic-wise summary  
+- [ ] Identify key arguments from each paper  
+- [ ] Organize citations properly  
+
+---
+
+## 🤖 Phase 3: Start Writing (April 22 Onward)
+- [ ] Outline the main sections of the paper  
+- [ ] Draft the introduction and background  
+- [ ] Write the main discussion points  
+- [ ] Revise and proofread  
+
+---
+
+## 📝 Final Documentation
+- [ ] Format the paper properly  
+- [ ] Ensure all references are included  
+- [ ] Submit the final draft  
+
+---
+
+### Legend:
+✔️ **Completed**: `[x]`  
+⏳ **In Progress**: `[-]`  
+❌ **Pending**: `[ ]`  
