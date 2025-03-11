@@ -1,0 +1,68 @@
+---
+title: "100 years of Pies vs. Bars"
+format:
+  pdf:
+    keep-tex: true
+    documentclass: article
+    papersize: letter
+    fontsize: 10pt
+    template-partials:
+      - title.tex
+      - before-bib.tex
+    include-in-header:
+      - text: |
+          \usepackage{sdss2020} % Uses Times Roman font (either newtx or times package)
+          \usepackage{url}
+          \usepackage{hyperref}
+          \usepackage{latexsym}
+          \usepackage{amsmath, amsthm, amsfonts}
+          \usepackage{algorithm, algorithmic}
+          \usepackage[dvipsnames]{xcolor} % colors
+          \newcommand{\mt}[1]{{\textcolor{blue}{#1}}}
+          \newcommand{\svp}[1]{{\textcolor{RedOrange}{#1}}}
+    classoption: [twocolumn]
+    mainfont: Times New Roman
+    colorlinks: true
+author:
+   - name: Maksuda Aktar Toma
+     affiliation:
+       department: Statistics Department
+       name: University of Nebraska, Lincoln
+     email: mtoma2@huskers.unl.edu
+     corresponding: true
+   - name: Susan Vanderplas
+     affiliation:
+       department: Statistics Department
+       name: University of Nebraska, Lincoln
+     email: svanderplas2@unl.edu
+     orcid: 0000-0002-3803-0972
+bibliographystyle: acl
+bibliography: refs.bib
+filters:
+   - latex-environment
+commands: [mt,svp]
+---
+
+# Abstract
+
+William Playfair introduced the pie and bar charts in the early 1800s, and by the turn of the next century, strong opinions about the effectiveness of alternative displays of the same data had been publicized in textbooks and manuals.
+For instance, @eellsRelativeMeritsCircles1926 quotes two contemporary resources that discuss pie charts as "not a desirable form of presentation"  [@brintonGraphicMethodsPresenting1914] and, more strongly, "an insult to a man's intelligence" [@karsten1923charts].
+@brintonGraphicMethodsPresenting1914 even identifies that the "sector method" is common, but if horizontal bar methods were used more frequently, they would be preferred for both speed and accuracy.
+@eellsRelativeMeritsCircles1926 also quotes an excerpt from an introductory statistics textbook [@secristIntroductionStatisticalMethods1925], which argues that pie charts require more cognitive effort to use accurately than a comparable stacked bar chart, calling pie diagrams "clumsy and defective".
+These insights mirror today's status quo: pie charts are stubbornly common, even though many design guidelines recommend against their use 
+
+@wickhamGraphicalCriticismHistorical2013 previously noted the prescience of design guidelines prior to empirical studies validating their recommendations across different types of visualizations.  
+
+# 1. Introduction
+
+
+# 2. The Dawn of Empirical Graphics
+
+
+# 3.  Modern Experimental Graphics 
+
+# 4. Criticism of previous experimental design 
+
+# 5. Field of comparison
+
+# References
