@@ -41,10 +41,19 @@ bibliography: refs.bib
 filters:
    - latex-environment
 commands: [mt,svp]
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 # Abstract
 
+The debate between pie charts and bar charts has been ongoing for over a century. Numerous studies with distinct methodologies and experimental designs have attempted to resolve this issue, but no single consensus has emerged. In this paper, we will provide a comprehensive summary of the existing literature, analyze the strengths and limitations of both chart types, and attempt to identify a unified solution based on empirical evidence and theoretical insights.
+
+It's really hard to reach in a conclusion that which one is better in just a one liner. We will review previous work on this topic, analyze their experimental designs, compare different scenarios, and attempt to generalize findings based on these studies.
+
+
+# 1. Introduction
 William Playfair introduced the pie and bar charts in the early 1800s, and by the turn of the next century, strong opinions about the effectiveness of alternative displays of the same data had been publicized in textbooks and manuals.
 For instance, @eellsRelativeMeritsCircles1926 quotes two contemporary resources that discuss pie charts as "not a desirable form of presentation"  [@brintonGraphicMethodsPresenting1914] and, more strongly, "an insult to a man's intelligence" [@karsten1923charts].
 @brintonGraphicMethodsPresenting1914 even identifies that the "sector method" is common, but if horizontal bar methods were used more frequently, they would be preferred for both speed and accuracy.
@@ -53,16 +62,30 @@ These insights mirror today's status quo: pie charts are stubbornly common, even
 
 @wickhamGraphicalCriticismHistorical2013 previously noted the prescience of design guidelines prior to empirical studies validating their recommendations across different types of visualizations.  
 
-# 1. Introduction
-
-
 # 2. The Dawn of Empirical Graphics
 
 
-# 3.  Modern Experimental Graphics 
+# 3.  Modern Experimental Graphics
+
 
 # 4. Criticism of previous experimental design 
 
+In 1991, Spence and Lewandowsky (@spenceDisplayingProportionsPercentages1991) demonstrated that pie charts can outperform bar charts under certain conditions when displaying proportions. They conducted a series of four experiments, each providing consistent insights into the comparative effectiveness of pie charts and bar charts for various tasks involving the interpretation of proportions.
+
+The first experiment investigated how people process pie charts, bar charts, and horizontal divided bar charts by measuring accuracy, processing time, and the effect of the number of components. Thirty participants were divided into three groups based on task type: simple comparison (A vs. B), comparison of a single value with a sum (A vs. B + C), and comparison of two sums (A + B vs. C + D). Accuracy improved with longer display times, reaching near 100% for simple tasks and around 90% for complex ones. Bar charts performed slightly better than pie charts for simple comparisons under time pressure, but differences between chart types were negligible for complex tasks.
+
+The second experiment yielded similar results but employed a different approach. It introduced a table instead of a horizontal bar chart, fixed the processing time at 3.0 seconds, reduced the number of component levels, and adopted a within-subject design for tasks. Additionally, it tested the effect of ordering components by magnitude. The results confirmed the superiority of bar charts over pie charts for accuracy, particularly for simpler tasks and fewer components. However, the lack of an ordering effect challenges the common belief that ordered components improve perception.
+
+The third experiment examined how task complexity and display type (pie chart, bar chart, and table) affect performance using a within-subject design, where each subject performed all three task types. Unlike Experiment 1, which used a between-subjects design, and Experiment 2, which introduced tables and fixed processing time, Experiment 3 retained pie charts, bar charts, and tables while excluding the horizontal divided bar chart. Processing time was fixed at 3.0 seconds, and two levels of components (4 and 7) were tested. Accuracy declined with task complexity, and while pie and bar charts showed similar performance for simpler tasks, pie charts outperformed the others for complex tasks, likely due to easier component identification and combination. Adjacency influenced bar chart performance but not pie charts, suggesting that perceptual and cognitive factors favor pie charts for complex tasks.
+
+The fourth experiment tested whether color coding could enhance performance by simplifying component identification. The design was identical to Experiment 3, except components were color-coded (red or blue) instead of using alphabetical labels. Processing time was reduced to 1.0 second since the task was expected to be easier with color cues. Accuracy was higher for pie (86%) and bar (84%) charts than for tables (75%), with performance declining as task complexity increased (88%, 82%, and 76% for simple to complex tasks). Unlike previous experiments, the number of components had no effect on accuracy, suggesting that once components were easily located through color, cognitive comparison was unaffected by complexity. Similar to Experiment 3, pie charts outperformed bar charts for complex tasks, but bar charts were better for simpler tasks. This indicates that color coding can improve performance in complex charts by simplifying component identification.
+
+The experiment has several limitations. The small and homogeneous sample (mainly students) limits the generalizability of the findings. Short exposure times (1.0–6.0 seconds) may not reflect real-world scenarios where viewers have more time to process information. The artificial setting (controlled computer-based tests) fails to capture real-world variability, such as distractions and viewing distance. Reducing exposure time to 1.0 second in Experiment 4 may have biased results toward pie charts by encouraging intuitive rather than analytical processing
+
+
+
 # 5. Field of comparison
 
-# References
+# 6. Future Research
+
+# 7. References
