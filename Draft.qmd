@@ -68,7 +68,7 @@ These insights mirror today's status quo: pie charts are stubbornly common, even
 
 #  Experimental design 
 
-## 4.1 Experiment Description
+## Experiment Description
 
 This poster synthesizes findings from a series of historical and modern experiments comparing pie and bar charts for interpreting proportional data.
 Early studies, such as @eellsRelativeMeritsCircles1926 and @croxtonBarChartsCircle1927, focused on accuracy and speed in estimating single or dual category proportions (e.g., $A/B$ or $A / (A + B)$).
@@ -79,44 +79,100 @@ Modern experiments, such as @spenceDisplayingProportionsPercentages1991, expande
 These tasks were tested across multiple formats (pie, bar, and table), with variations in exposure time, number of components, and use of color or ordering. 
 Performance was evaluated in terms of speed and accuracy, allowing researchers to assess how perceptual and cognitive demands shift across visualization types and task difficulty.
 
+\svp{Add study to bibliography}
 Peterson and Schramm (1954) evaluated the accuracy of proportion estimation across eight common chart types used to represent parts of a whole: circle, disc, single bar, multiple bar, multiple cylinder, multiple square column, multiple area column, and partial cosmograph. Each chart displayed five fixed proportions (43%, 23%, 18%, 10%, 6%) and was presented alongside a similar "decoy" graph to mask repetition. A total of 112 U.S. Air Force personnel viewed the charts in random order and estimated the percentage values for each component. After discarding incomplete responses, 86 participants contributed 3,440 data points, forming the basis for comparison across visual formats.
 
-Cleveland & McGill (1984) conducted a series of experiments to test a theory of graphical perception based on "elementary perceptual tasks" such as position, length, angle, area, and shading. They hypothesized a hierarchy of these tasks based on how accurately people extract quantitative information from them. In their experiments, participants viewed a range of common graph types—including bar charts, pie charts, and divided bar charts—and were asked to make visual judgments of values or differences. The results supported their theory: judgments involving position along a common scale were the most accurate, followed by length, with angle (used in pie charts) yielding the least accurate responses. These findings laid the foundation for many modern principles in data visualization design.
+@clevelandGraphicalPerceptionTheory1984 [-@clevelandGraphicalPerceptionGraphical1985] conducted a series of experiments to test a theory of graphical perception based on "elementary perceptual tasks" such as position, length, angle, area, and shading. 
+They hypothesized a hierarchy of these tasks based on how accurately people extract quantitative information from them. 
+In their experiments, participants viewed a range of common graph types—including bar charts, pie charts, and divided bar charts—and were asked to make visual judgments of values or differences. 
+The results supported their theory: judgments involving position along a common scale were the most accurate, followed by length, with angle (used in pie charts) yielding the least accurate responses. 
+These findings laid the foundation for many modern principles in data visualization design.
 
-Cleveland & McGill (1986) conducted a foundational experiment to evaluate the accuracy of seven basic graphical perception tasks: position (aligned and non-aligned), length, angle, slope, and area (circle and blob). Participants were shown visual stimuli in which one object served as a standard, and three comparison objects were judged as percentages relative to it. Each participant made 210 judgments across 70 displays. The study included 127 participants from diverse educational backgrounds. Results confirmed a perceptual hierarchy: position judgments were the most accurate, while angle and area were less reliable—insights that continue to influence data visualization design today.
+@clevelandExperimentGraphicalPerception1986 conducted a \svp{follow-up} experiment to evaluate the accuracy of seven basic graphical perception tasks: position (aligned and non-aligned), length, angle, slope, and area (circle and blob). 
+Participants were shown visual stimuli in which one object served as a standard, and three comparison objects were judged as percentages relative to it. Each participant made 210 judgments across 70 displays. 
+The study included 127 participants from diverse educational backgrounds. 
+Results confirmed a perceptual hierarchy: position judgments were the most accurate, while angle and area were less reliable—insights that continue to influence data visualization design today. 
+\svp{Did the experiment actually cover all 7 tasks??? Please be careful with how you cite these, and provide more detail -- that's what we're specifically looking for here.}
 
-Simkin and Hastie (1987) investigated how different graphical encodings—position, length, and angle—affect performance on visual judgment tasks. 200 Undergraduate participants were shown pie charts, bar charts, and divided bar charts and asked to make either comparison judgments (A/B) or proportion-of-the-whole judgments. Each graph type relied on a different visual code: bar charts used position, divided bars used length, and pie charts used angle. Participants completed 90 trials under timed conditions. Results showed that position and length led to higher accuracy and faster response times for comparison tasks, while pie charts supported better performance in proportion-of-the-whole judgments, demonstrating a clear interaction between graph type and task type.
+Simkin and Hastie (1987) investigated how different graphical encodings—position, length, and angle—affect performance on visual judgment tasks. 
+200 Undergraduate participants were shown pie charts, bar charts, and divided bar charts and asked to make either comparison judgments ($A/B$) or proportion-of-the-whole \svp{($A/(A+B)$)} judgements.
+Each graph type relied on a different visual code: bar charts used position, divided bars used length, and pie charts used angle. 
+Participants completed 90 trials under timed conditions. 
+Results showed that position and length led to higher accuracy and faster response times for comparison tasks, while pie charts supported better performance in proportion-of-the-whole judgments, demonstrating a clear interaction between graph type and task type.
 
-Very recently, more works have been discovered on this debate that catch researchers’ eyes on the topic. Kosara & Skau (2016) investigated how common distortions in pie charts affect judgment accuracy. Participants were shown a series of pie chart variations and asked to estimate the percentage represented by a highlighted slice. The variations included a standard pie chart, an "exploded" pie (with a slice offset), a "larger slice" chart (with an extended radius), a vertically compressed elliptical pie, and a square-shaped chart. All charts had two segments and were rotated randomly to eliminate positional bias. Participants were recruited via Mechanical Turk and asked to provide whole-number estimates for values ranging from 3% to 97%. Results showed that all distortions—except the exploded pie—led to significantly higher judgment errors compared to the baseline pie chart.
+\svp{Add study to bibliography}
+Very recently, more works have been discovered on this debate that catch researchers’ eyes on the topic. 
+Kosara & Skau (2016) investigated how common distortions in pie charts affect judgment accuracy. Participants were shown a series of pie chart variations and asked to estimate the percentage represented by a highlighted slice. 
+The variations included a standard pie chart, an "exploded" pie (with a slice offset), a "larger slice" chart (with an extended radius), a vertically compressed elliptical pie, and a square-shaped chart. 
+All charts had two segments and were rotated randomly to eliminate positional bias. 
+Participants were recruited via Mechanical Turk and asked to provide whole-number estimates for values ranging from 3% to 97%. 
+Results showed that all distortions—except the exploded pie—led to significantly higher judgment errors compared to the baseline pie chart.
 
-In 2025, Hill did the study that involved three online experiments designed to evaluate how effectively bar, pie, and donut charts support part-whole estimation and ranking tasks. In Experiment 1, participants viewed randomized sets of charts (10 bar, 5 pie, 5 donut) created from multinomially generated data and answered ranking and proportion estimation questions. Experiment 2 focused on charts where elements A and B were similar in size, allowing for precise comparison of visual discrimination accuracy across chart types. Experiment 3 assessed relative magnitude estimation on pie and donut charts using a direct comparison task ("If A is 100, what is B?"). A total of 42 participants from the University of Surrey took part in the study via Qualtrics, and all data were anonymized
+In 2025, Hill did the study that involved three online experiments designed to evaluate how effectively bar, pie, and donut charts support part-whole estimation and ranking tasks. 
+In Experiment 1, participants viewed randomized sets of charts (10 bar, 5 pie, 5 donut) created from multinomially generated data and answered ranking and proportion estimation questions. 
+Experiment 2 focused on charts where elements A and B were similar in size, allowing for precise comparison of visual discrimination accuracy across chart types. 
+Experiment 3 assessed relative magnitude estimation on pie and donut charts using a direct comparison task ("If A is 100, what is B?"). 
+A total of 42 participants from the University of Surrey took part in the study via Qualtrics, and all data were anonymized
 
-## 4.2 Criticism of previous Experimental design
+## Criticism of previous experimental design
 
-In 1991, Spence and Lewandowsky (@spenceDisplayingProportionsPercentages1991) demonstrated that pie charts can outperform bar charts under certain conditions when displaying proportions. They conducted a series of four experiments, each providing consistent insights into the comparative effectiveness of pie charts and bar charts for various tasks involving the interpretation of proportions.
+@spenceDisplayingProportionsPercentages1991 demonstrated that pie charts can outperform bar charts under certain conditions when displaying proportions.
+They conducted a series of four experiments, each providing consistent insights into the comparative effectiveness of pie charts and bar charts for various tasks involving the interpretation of proportions.
 
-The first experiment investigated how people process pie charts, bar charts, and horizontal divided bar charts by measuring accuracy, processing time, and the effect of the number of components. Thirty participants were divided into three groups based on task type: simple comparison (A vs. B), comparison of a single value with a sum (A vs. B + C), and comparison of two sums (A + B vs. C + D). Accuracy improved with longer display times, reaching near 100% for simple tasks and around 90% for complex ones. Bar charts performed slightly better than pie charts for simple comparisons under time pressure, but differences between chart types were negligible for complex tasks.
+The first experiment investigated how people process pie charts, bar charts, and horizontal divided bar charts by measuring accuracy, processing time, and the effect of the number of components. 
+Thirty participants were divided into three groups based on task type: simple comparison ($A$ vs. $B$), comparison of a single value with a sum ($A$ vs. $B + C$), and comparison of two sums ($A + B$ vs. $C + D$). \svp{Were participants estimating ratios, or just judging larger/smaller?}
+Accuracy improved with longer display times, reaching near 100% for simple tasks and around 90% for complex ones. 
+Bar charts performed slightly better than pie charts for simple comparisons under time pressure, but differences between chart types were negligible for complex tasks.
 
-The second experiment yielded similar results but employed a different approach. It introduced a table instead of a horizontal bar chart, fixed the processing time at 3.0 seconds, reduced the number of component levels, and adopted a within-subject design for tasks. Additionally, it tested the effect of ordering components by magnitude. The results confirmed the superiority of bar charts over pie charts for accuracy, particularly for simpler tasks and fewer components. However, the lack of an ordering effect challenges the common belief that ordered components improve perception.
+The second experiment yielded similar results but employed a different approach.
+It introduced a table instead of a horizontal bar chart, fixed the processing time at 3.0 seconds, reduced the number of component levels, and adopted a within-subject design for tasks. 
+Additionally, it tested the effect of ordering components by magnitude. 
+The results confirmed the superiority of bar charts over pie charts for accuracy, particularly for simpler tasks and fewer components. 
+However, the lack of an ordering effect challenges the common belief that ordered components improve perception. \svp{How many categories were used? It's possible that this is true for small tables but not as true for larger tables.}
 
-The third experiment examined how task complexity and display type (pie chart, bar chart, and table) affect performance using a within-subject design, where each subject performed all three task types. Unlike Experiment 1, which used a between-subjects design, and Experiment 2, which introduced tables and fixed processing time, Experiment 3 retained pie charts, bar charts, and tables while excluding the horizontal divided bar chart. Processing time was fixed at 3.0 seconds, and two levels of components (4 and 7) were tested. Accuracy declined with task complexity, and while pie and bar charts showed similar performance for simpler tasks, pie charts outperformed the others for complex tasks, likely due to easier component identification and combination. Adjacency influenced bar chart performance but not pie charts, suggesting that perceptual and cognitive factors favor pie charts for complex tasks.
+The third experiment examined how task complexity and display type (pie chart, bar chart, and table) affect performance using a within-subject design, where each subject performed all three task types.
+Unlike Experiment 1, which used a between-subjects design, and Experiment 2, which introduced tables and fixed processing time, Experiment 3 retained pie charts, bar charts, and tables while excluding the horizontal divided bar chart. 
+Processing time was fixed at 3.0 seconds \svp{You can fix stimulus time but not processing time -- processing takes as long as it takes}, and two levels of components (4 and 7) were tested. 
+Accuracy declined with task complexity, and while pie and bar charts showed similar performance for simpler tasks, pie charts outperformed the others for complex tasks, likely due to easier component identification and combination.
+Adjacency influenced bar chart performance but not pie charts, suggesting that perceptual and cognitive factors favor pie charts for complex tasks.
 
-The fourth experiment tested whether color coding could enhance performance by simplifying component identification. The design was identical to Experiment 3, except components were color-coded (red or blue) instead of using alphabetical labels. Processing time was reduced to 1.0 second since the task was expected to be easier with color cues. Accuracy was higher for pie (86%) and bar (84%) charts than for tables (75%), with performance declining as task complexity increased (88%, 82%, and 76% for simple to complex tasks). Unlike previous experiments, the number of components had no effect on accuracy, suggesting that once components were easily located through color, cognitive comparison was unaffected by complexity. Similar to Experiment 3, pie charts outperformed bar charts for complex tasks, but bar charts were better for simpler tasks. This indicates that color coding can improve performance in complex charts by simplifying component identification.
+The fourth experiment tested whether color coding could enhance performance by simplifying component identification. 
+The design was identical to Experiment 3, except components were color-coded (red or blue) instead of using alphabetical labels. 
+Processing time was reduced to 1.0 second since the task was expected to be easier with color cues. 
+Accuracy was higher for pie (86%) and bar (84%) charts than for tables (75%), with performance declining as task complexity increased (88%, 82%, and 76% for simple to complex tasks). 
+Unlike previous experiments, the number of components had no effect on accuracy, suggesting that once components were easily located through color, cognitive comparison was unaffected by complexity. 
+Similar to Experiment 3, pie charts outperformed bar charts for complex tasks, but bar charts were better for simpler tasks. 
+This indicates that color coding can improve performance in complex charts by simplifying component identification.
 
-The experiment has several limitations. The small and homogeneous sample (mainly students) limits the generalizability of the findings. Short exposure times (1.0–6.0 seconds) may not reflect real-world scenarios where viewers have more time to process information. The artificial setting (controlled computer-based tests) fails to capture real-world variability, such as distractions and viewing distance. Reducing exposure time to 1.0 second in Experiment 4 may have biased results toward pie charts by encouraging intuitive rather than analytical processing
+The experiment has several limitations. 
+The small and homogeneous sample (mainly students) limits the generalizability of the findings. 
+Short exposure times (1.0–6.0 seconds) may not reflect real-world scenarios where viewers have more time to process information. \svp{Why do psycologists use short exposure times? Look into this -- there's a reason}
+The artificial setting (controlled computer-based tests) fails to capture real-world variability, such as distractions and viewing distance. 
+Reducing exposure time to 1.0 second in Experiment 4 may have biased results toward pie charts by encouraging intuitive rather than analytical processing
 
 # Measurement and Preference
 
-Eells (1926) didn’t just look at how well people performed—he also explored how they felt about the charts and how they approached the task. When it came to accuracy, pie charts actually did better than bar charts, especially as the number of segments increased. People also tended to move a bit faster with pie charts, completing slightly more within five minutes. One of the most striking findings was that bar charts led to 70% more large errors, making them less reliable for precise judgment. After the task, students were asked which chart type they preferred, and the majority chose pie charts for showing part-whole data. When it came to strategy, most students said they judged the slices using arc length, with others using angles or area—and all three methods turned out to be about equally accurate. Overall, the results challenged the common criticism that pie charts are hard to read.
+@eellsRelativeMeritsCircles1926 didn’t just look at how well people performed—he also explored how they felt about the charts and how they approached the task. 
+When it came to accuracy, pie charts actually did better than bar charts, especially as the number of segments increased. 
+People also tended to move a bit faster with pie charts, completing slightly more within five minutes. \svp{Eells didn't do the hypothesis test -- can you from provided information? Was it significant? Be careful about uncritically reporting results.}
+One of the most striking findings was that bar charts led to 70% more large errors, making them less reliable for precise judgment.
+After the task, students were asked which chart type they preferred, and the majority chose pie charts for showing part-whole data. 
+When it came to strategy, most students said they judged the slices using arc length, with others using angles or area—and all three methods turned out to be about equally accurate.
+Overall, the results challenged the common criticism that pie charts are hard to read.
 
 # Field of comparison
 
 # Result
-Which chart works best really depends on the task. When people are asked to simply compare two values (A vs B), bar charts consistently come out on top—they’re faster and more accurate, and participants tend to prefer them for that reason (Spence & Lewandowsky, 1991; Simkin & Hastie, 1987; Hill, 2025). But when the task shifts to estimating what proportion one part is of the whole (A / A+B), pie charts do better, likely because they align with how we naturally think about part-whole relationships (Cleveland & McGill, 1984; Simkin & Hastie, 1987).
+Which chart works best really depends on the task. 
+When people are asked to simply compare two values (A vs B), bar charts consistently come out on top—they’re faster and more accurate, and participants tend to prefer them for that reason (Spence & Lewandowsky, 1991; Simkin & Hastie, 1987; Hill, 2025).
+When the task shifts to estimating what proportion one part is of the whole ($A / (A+B)$), pie charts do better, likely because they align with how we naturally think about part-whole relationships (Cleveland & McGill, 1984; Simkin & Hastie, 1987). \svp{Is this still true when A and B aren't adjacent in e.g. a 3-4 component chart?} 
 
-For more complex comparisons—like A vs B+C or A+B vs C+D—the results are more mixed. Bar charts have a slight edge when comparing a single value to a sum (A vs B+C), but when comparing two grouped values (A+B vs C+D), pie charts actually perform better (Spence & Lewandowsky, 1991). This might be because it's easier to visually group adjacent slices than non-aligned bars (Kosara & Skau, 2016).
+For more complex comparisons—like $A$ vs $B+C$ or $A+B$ vs $C+D$, the results are more mixed. 
+Bar charts have a slight edge when comparing a single value to a sum ($A$ vs $B+C$), but when comparing two grouped values ($A+B$ vs $C+D$), pie charts actually perform better (Spence & Lewandowsky, 1991). 
+This might be because it's easier to visually group adjacent slices than non-aligned bars (Kosara & Skau, 2016).
 
-When it comes to ranking multiple parts, like identifying the top three largest values, bar charts win again, as their alignment allows for quicker visual scanning (Hill, 2025; Kosara & Skau, 2016). And in magnitude estimation tasks (e.g., "If A is 100, what is B?"), both pie and donut charts tend to outperform bars, though people are more likely to misjudge values slightly in those formats (Kosara & Skau, 2016; Hill, 2025).
+When it comes to ranking multiple parts, like identifying the top three largest values, bar charts win again, as their alignment allows for quicker visual scanning (Hill, 2025; Kosara & Skau, 2016). 
+And in magnitude estimation tasks (e.g., "If A is 100, what is B?"), both pie and donut charts tend to outperform bars, though people are more likely to misjudge values slightly in those formats (Kosara & Skau, 2016; Hill, 2025).
 
 In the end, there’s no universal winner—the best chart depends on the specific task and what kind of judgment you're asking the reader to make.
 
