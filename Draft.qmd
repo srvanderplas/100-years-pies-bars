@@ -68,7 +68,7 @@ These insights mirror today's status quo: pie charts are stubbornly common, even
 # 3.  Modern Experimental Graphics
 
 
-# 4. Criticism of previous Experimental design 
+# 4.  Experimental design 
 
 ## 4.1 Experiment Description
 
@@ -102,10 +102,23 @@ The fourth experiment tested whether color coding could enhance performance by s
 
 The experiment has several limitations. The small and homogeneous sample (mainly students) limits the generalizability of the findings. Short exposure times (1.0–6.0 seconds) may not reflect real-world scenarios where viewers have more time to process information. The artificial setting (controlled computer-based tests) fails to capture real-world variability, such as distractions and viewing distance. Reducing exposure time to 1.0 second in Experiment 4 may have biased results toward pie charts by encouraging intuitive rather than analytical processing
 
+# 5. Measurement and Preference
 
+Eells (1926) didn’t just look at how well people performed—he also explored how they felt about the charts and how they approached the task. When it came to accuracy, pie charts actually did better than bar charts, especially as the number of segments increased. People also tended to move a bit faster with pie charts, completing slightly more within five minutes. One of the most striking findings was that bar charts led to 70% more large errors, making them less reliable for precise judgment. After the task, students were asked which chart type they preferred, and the majority chose pie charts for showing part-whole data. When it came to strategy, most students said they judged the slices using arc length, with others using angles or area—and all three methods turned out to be about equally accurate. Overall, the results challenged the common criticism that pie charts are hard to read.
 
 # 5. Field of comparison
 
-# 6. Future Research
+# 6. Result
+Which chart works best really depends on the task. When people are asked to simply compare two values (A vs B), bar charts consistently come out on top—they’re faster and more accurate, and participants tend to prefer them for that reason (Spence & Lewandowsky, 1991; Simkin & Hastie, 1987; Hill, 2025). But when the task shifts to estimating what proportion one part is of the whole (A / A+B), pie charts do better, likely because they align with how we naturally think about part-whole relationships (Cleveland & McGill, 1984; Simkin & Hastie, 1987).
 
-# 7. References
+For more complex comparisons—like A vs B+C or A+B vs C+D—the results are more mixed. Bar charts have a slight edge when comparing a single value to a sum (A vs B+C), but when comparing two grouped values (A+B vs C+D), pie charts actually perform better (Spence & Lewandowsky, 1991). This might be because it's easier to visually group adjacent slices than non-aligned bars (Kosara & Skau, 2016).
+
+When it comes to ranking multiple parts, like identifying the top three largest values, bar charts win again, as their alignment allows for quicker visual scanning (Hill, 2025; Kosara & Skau, 2016). And in magnitude estimation tasks (e.g., “If A is 100, what is B?”), both pie and donut charts tend to outperform bars, though people are more likely to misjudge values slightly in those formats (Kosara & Skau, 2016; Hill, 2025).
+
+In the end, there’s no universal winner—the best chart depends on the specific task and what kind of judgment you're asking the reader to make.
+
+![*Grouped Bar Chart*](Grouped_Bar_Chart.png)
+
+# 7. Future Research
+
+# 8. References
