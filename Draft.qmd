@@ -6,16 +6,12 @@ format:
     documentclass: article
     papersize: letter
     fontsize: 10pt
-    template-partials:
-      - title.tex
-      - before-bib.tex
     include-in-header:
       - text: |
           \usepackage{url}
           \usepackage{hyperref}
           \usepackage{latexsym}
           \usepackage{amsmath, amsthm, amsfonts}
-          \usepackage{algorithm, algorithmic}
           \usepackage[dvipsnames]{xcolor} % colors
           \newcommand{\mt}[1]{{\textcolor{blue}{#1}}}
           \newcommand{\svp}[1]{{\textcolor{RedOrange}{#1}}}
@@ -31,7 +27,7 @@ author:
    - name: Susan Vanderplas
      affiliation:
        department: Statistics Department
-       name: University of Nebraska, Lincoln
+       name: University of Nebraska-Lincoln
      email: svanderplas2@unl.edu
      orcid: 0000-0002-3803-0972
 
@@ -46,9 +42,12 @@ editor:
 
 # Abstract
 
-The debate between pie charts and bar charts has been ongoing for over a century. Numerous studies with distinct methodologies and experimental designs have attempted to resolve this issue, but no single consensus has emerged. In this paper, we will provide a comprehensive summary of the existing literature, analyze the strengths and limitations of both chart types, and attempt to identify a unified solution based on empirical evidence and theoretical insights.
+The debate between pie charts and bar charts has been ongoing for over a century. 
+Numerous studies with distinct methodologies and experimental designs have attempted to resolve this issue, but no single consensus has emerged. 
+In this paper, we will provide a comprehensive summary of the existing literature, analyze the strengths and limitations of both chart types, and attempt to identify a unified solution based on empirical evidence and theoretical insights.
 
-It's really hard to reach in a conclusion that which one is better in just a one liner. We will review previous work on this topic, analyze their experimental designs, compare different scenarios, and attempt to generalize findings based on these studies.
+It's really hard to reach in a conclusion that which one is better in just a one liner. 
+We will review previous work on this topic, analyze their experimental designs, compare different scenarios, and attempt to generalize findings based on these studies.
 
 
 # Introduction
