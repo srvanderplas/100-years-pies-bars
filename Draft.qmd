@@ -151,13 +151,13 @@ The study included 127 participants from diverse educational backgrounds.
 Results confirmed a perceptual hierarchy: position judgments were the most accurate, while angle and area were less reliable---insights that continue to influence data visualization design today.
 \svp{Did the experiment actually cover all 7 tasks??? Please be careful with how you cite these, and provide more detail -- that's what we're specifically looking for here.}
 
-```{=tex}
+
 \mt{They conducted a foundational study to assess how accurately people interpret different graphical encodings.
 They focused on six basic graphical perception tasks: position along a common scale, position along non-aligned scales, length, angle, slope, and area (represented by circles and irregular "blobs").
 Participants were shown 70 visual displays, each with one standard object and three comparisons, and asked to estimate each comparison as a percentage of the standard.
 The study involved 127 participants---high school students, college students, and professionals---who each made 210 judgments across all task types and standard sizes.
 Stimuli were randomized to avoid learning effects}
-```
+
 The main outcome was estimation accuracy---how close each response was to the true percentage.
 No scales or measurement tools were provided, so judgments relied purely on visual perception.
 Each of the six tasks was tested with both small and large reference standards, and values ranged from 17.5% to 87.5%.
@@ -179,12 +179,12 @@ All charts had two segments and were rotated randomly to eliminate positional bi
 Participants were recruited via Mechanical Turk and asked to provide whole-number estimates for values ranging from 3% to 97%.
 Results showed that all distortions---except the exploded pie---led to significantly higher judgment errors compared to the baseline pie chart.
 
-```{=tex}
+
 \mt{Skau and Kosara (2016) conducted a focused experiment to isolate how individual visual encodings---arc length, angle, and area---contribute to interpretation accuracy in pie and donut charts.
 They created six chart types: baseline pie, baseline donut, arc-only, angle (pie-style), angle (donut-style), and area-only.
 Each chart showed just two segments---a blue "target" slice and a gray remainder---allowing participants to focus on estimating a single proportion without distractions.
 Across 48 randomized trials (eight per chart type), 100 Mechanical Turk participants were asked the same question for every chart: "What percentage of the whole is indicated below?" The charts were randomly rotated to avoid alignment biases, and a brief tutorial was provided to ensure participants understood each chart forma}
-```
+
 Measurement & Accuracy The study focused exclusively on perceptual accuracy.
 For each chart, researchers measured the absolute difference between the participant's estimate and the true value, as well as error patterns such as reversed judgments (e.g., answering 75% instead of 25% on angle charts).
 No time constraints were enforced, and response time or subjective preferences were not formally recorded.
@@ -263,49 +263,7 @@ And in magnitude estimation tasks (e.g., "If A is 100, what is B?"), both pie an
 
 In the end, there's no universal winner---the best chart depends on the specific task and what kind of judgment you're asking the reader to make.
 
-```{r}
-#| echo: false
 
-library(ggplot2)
-
-# Data
-chart_data <- data.frame(
-  Chart_Type = rep(c("Bar", "Pie", "Donut"), each = 6),
-  Task_Type = rep(c("A vs B", "A / (A + B)", "A vs (B + C)", 
-                    "(A + B) vs (C + D)", "Ranking", "Magnitude Est."), 3),
-  Rank = c(
-    1, 3, 1, 2, 1, 3,  # Bar
-    2, 1, 2, 1, 2, 1,  # Pie
-    3, 2, 3, 3, 3, 1   # Donut
-  )
-)
-
-# Reorder x-axis: Pie, Bar, Donut
-chart_data$Chart_Type <- factor(chart_data$Chart_Type, levels = c("Pie", "Bar", "Donut"))
-
-# Set Rank so that 1 shows on top
-chart_data$Rank <- factor(chart_data$Rank, levels = c(3, 2, 1))
-
-# Plot
-ggplot(chart_data, aes(x = Chart_Type, y = Rank, fill = Task_Type)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.8), width = 0.7) +
-  labs(
-    title = "Chart Type Performance Across Tasks",
-    y = "Rank (1 = Best)",
-    x = NULL,
-    fill = "Task Type"
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(
-    legend.position = "right",
-    legend.title = element_text(size = 12),
-    legend.text = element_text(size = 11),
-    plot.title = element_text(face = "bold", hjust = 0.5)
-  )
-
-
-
-```
 
 # Comparison table
 
@@ -339,303 +297,57 @@ kable(
 
 ## Pie Chart
 
-```{r}
-#| echo: false
-
-library(ggplot2)
-library(dplyr)
-
-# Data for 4 segments
-df1 <- data.frame(
-  group = c("A", "B", "C", "D"),
-  value = c(25, 25, 25, 25)
-)
-
-ggplot(df1, aes(x = "", y = value, fill = group)) +
-  geom_bar(width = 1, stat = "identity", color = "white") +
-  coord_polar("y") +
-  theme_void() +
-  ggtitle("Comparison: A, B vs C, D") +
-  theme(
-    legend.title = element_blank(),
-    plot.title = element_text(hjust = 0.5, size = 14)
-  )
-
-# Data for two pie charts
-df2 <- data.frame(
-  group = rep(c("A+B", "C+D"), each = 2),
-  sub_group = rep(c("A", "B", "C", "D"), 1),
-  value = c(20, 30, 25, 25)
-)
-
-df2$facet <- rep(c("Group AB", "Group CD"), each = 2)
-
-ggplot(df2, aes(x = "", y = value, fill = sub_group)) +
-  geom_bar(stat = "identity", width = 1, color = "white") +
-  coord_polar("y") +
-  facet_wrap(~ facet) +
-  theme_void() +
-  ggtitle("Comparison: AB vs CD") +
-  theme(
-    strip.text = element_text(size = 12),
-    legend.title = element_blank(),
-    plot.title = element_text(hjust = 0.5, size = 14)
-  )
-
-
-```
 
 ```{r}
-#| echo: False
-library(ggplot2)
-library(dplyr)
-
-# Helper function to create pie chart data
-make_pie_data <- function(labels, values, group) {
-  df <- data.frame(
-    label = labels,
-    value = values
-  )
-  df$group <- group
-  df
-}
-
-# Create all pie segments
-pie_data <- bind_rows(
-  make_pie_data(c("A", "B"), c(0.4, 0.6), "A vs B"),
-  make_pie_data(c("A", "B", "C"), c(0.25, 0.25, 0.5), "A vs (B+C)"),
-  make_pie_data(c("A+B", "C"), c(0.5, 0.5), "(A+B) vs C")
-)
-
-# Prepare for pie chart layout
-pie_data <- pie_data %>%
-  group_by(group) %>%
-  mutate(
-    fraction = value / sum(value),
-    ymax = cumsum(fraction),
-    ymin = lag(ymax, default = 0),
-    label_pos = (ymin + ymax) / 2
-  )
-
-# Plot
-ggplot(pie_data, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0, fill = label)) +
-  geom_rect(color = "white") +
-  coord_polar(theta = "y") +
-  facet_wrap(~group, ncol = 1, strip.position = "left") +
-  geom_text(aes(x = 0.5, y = label_pos, label = label), size = 5) +
-  scale_fill_manual(values = c("A" = "#e0f3db", "B" = "#ccebc5", "C" = "#b2df8a", "A+B" = "#a6cee3")) +
-  theme_void() +
-  theme(
-    strip.text = element_text(size = 14, face = "bold"),
-    legend.position = "none",
-    plot.title = element_text(hjust = 0.5, size = 16, face = "bold")
-  ) +
-  ggtitle("Comparison Tasks")
-
-# ==== 1. Full Pie Chart: A, B, C, D ====
-df_full <- data.frame(
-  group = c("A", "B", "C", "D"),
-  value = c(25, 25, 25, 25)
-)
-
-df_full <- df_full %>%
-  mutate(
-    fraction = value / sum(value),
-    ymax = cumsum(fraction),
-    ymin = c(0, head(ymax, n = -1)),
-    label_pos = (ymin + ymax) / 2
-  )
-
-ggplot(df_full, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0, fill = group)) +
-  geom_rect(color = "white") +
-  geom_text(aes(x = 0.5, y = label_pos, label = group), size = 6, fontface = "bold") +
-  coord_polar(theta = "y") +
-  scale_fill_manual(values = gray.colors(4, start = 0.9, end = 0.4)) +
-  theme_void() +
-  ggtitle("Full Pie Chart: A, B, C, D")
-
-```
-
-```{r}
-#| echo: false
-library(ggplot2)
-library(dplyr)
-
-# Helper function to create pie chart data
-make_pie_data <- function(labels, values, group) {
-  df <- data.frame(
-    label = labels,
-    value = values
-  )
-  df$group <- group
-  df
-}
-
-# Combine all pie data
-pie_data <- bind_rows(
-  make_pie_data(c("A", "B"), c(0.4, 0.6), "A vs B"),
-  make_pie_data(c("A", "B", "C"), c(0.25, 0.25, 0.5), "A vs (B+C)"),
-  make_pie_data(c("A+B", "C"), c(0.5, 0.5), "(A+B) vs C")
-)
-
-# Compute positions
-pie_data <- pie_data %>%
-  group_by(group) %>%
-  mutate(
-    fraction = value / sum(value),
-    ymax = cumsum(fraction),
-    ymin = lag(ymax, default = 0),
-    label_pos = (ymin + ymax) / 2
-  )
-
-# Color palette (match original soft hues)
-color_palette <- c("A" = "#FBB4AE", "B" = "#B3CDE3", "C" = "#DECBE4", "A+B" = "#CCEBC5")
-
-# Plot
-ggplot(pie_data, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0, fill = label)) +
-  geom_rect(color = "white") +
-  geom_text(aes(x = 0.5, y = label_pos, label = label), size = 5) +  # Labels inside
-  coord_polar(theta = "y") +
-  facet_wrap(~group, nrow = 1) +  # Horizontal layout
-  scale_fill_manual(values = color_palette) +
-  theme_void() +
-  theme(
-    strip.text = element_text(size = 14, face = "bold"),
-    legend.position = "none"
-  )
-
-
-```
-
-```{r}
-#| echo: false
-# Load required libraries
-library(ggplot2)
-library(dplyr)
-
-# ==== 1. Full Pie Chart: A, B, C, D ====
-df_full <- data.frame(
-  group = c("A", "B", "C", "D"),
-  value = c(25, 25, 25, 25)
-)
-
-df_full <- df_full %>%
-  mutate(
-    fraction = value / sum(value),
-    ymax = cumsum(fraction),
-    ymin = c(0, head(ymax, n = -1)),
-    label_pos = (ymin + ymax) / 2
-  )
-
-ggplot(df_full, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0, fill = group)) +
-  geom_rect(color = "white") +
-  geom_text(aes(x = 0.5, y = label_pos, label = group), size = 6, fontface = "bold") +
-  coord_polar(theta = "y") +
-  scale_fill_manual(values = gray.colors(4, start = 0.9, end = 0.4)) +
-  theme_void() +
-  ggtitle("Full Pie Chart: A, B, C, D")
-
-# ==== 2. Half Pie Chart: Group AB ====
-df_ab <- data.frame(
-  group = c("A", "B"),
-  value = c(50, 50)
-)
-
-df_ab <- df_ab %>%
-  mutate(
-    fraction = value / sum(value),
-    ymax = cumsum(fraction),
-    ymin = c(0, head(ymax, n = -1)),
-    label_pos = (ymin + ymax) / 2
-  )
-
-p_ab <- ggplot(df_ab, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0, fill = group)) +
-  geom_rect(color = "white") +
-  geom_text(aes(x = 0.5, y = label_pos, label = group), size = 6, fontface = "bold") +
-  coord_polar(theta = "y", start = pi) +  # start at top to show half-pie
-  scale_fill_manual(values = gray.colors(2, start = 0.9, end = 0.7)) +
-  theme_void() +
-  ggtitle("Group AB")
-
-# ==== 3. Half Pie Chart: Group CD ====
-df_cd <- data.frame(
-  group = c("C", "D"),
-  value = c(50, 50)
-)
-
-df_cd <- df_cd %>%
-  mutate(
-    fraction = value / sum(value),
-    ymax = cumsum(fraction),
-    ymin = c(0, head(ymax, n = -1)),
-    label_pos = (ymin + ymax) / 2
-  )
-
-p_cd <- ggplot(df_cd, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0, fill = group)) +
-  geom_rect(color = "white") +
-  geom_text(aes(x = 0.5, y = label_pos, label = group), size = 6, fontface = "bold") +
-  coord_polar(theta = "y", start = pi) +
-  scale_fill_manual(values = gray.colors(2, start = 0.6, end = 0.4)) +
-  theme_void() +
-  ggtitle("Group CD")
-
-# ==== Combine AB and CD side by side ====
-library(patchwork)
-p_ab + p_cd
-```
-
-```{r}
-# Load libraries
+# | echo: false
 library(ggplot2)
 library(dplyr)
 library(patchwork)
 
-# Function to make pie chart with highlighted segments
-make_pie_plot <- function(data, title, highlight_group = NULL, highlight_color = "black") {
+# Helper function for pie chart
+create_pie <- function(data, fill_colors, title, bold_groups = NULL) {
   data <- data %>%
     mutate(
       fraction = value / sum(value),
       ymax = cumsum(fraction),
       ymin = lag(ymax, default = 0),
       label_pos = (ymin + ymax) / 2,
-      label = label
+      border_size = ifelse(label %in% bold_groups, 3, 0.8)
     )
-  
-  # Add border flag
-  data$highlight <- ifelse(data$label %in% highlight_group, TRUE, FALSE)
 
   ggplot(data) +
-    geom_rect(aes(
-      ymin = ymin, ymax = ymax, xmin = 0.5, xmax = 1.5,
-      fill = label, color = highlight
-    ), size = 1) +
+    geom_rect(aes(ymin = ymin, ymax = ymax, xmin = 0.5, xmax = 1.5,
+                  fill = label, size = border_size),
+              color = "black", show.legend = FALSE) +
+    geom_text(aes(x = 1, y = label_pos, label = label), size = 6) +
+    scale_fill_manual(values = fill_colors) +
+    scale_size_identity() +
     coord_polar(theta = "y") +
-    geom_text(aes(
-      x = 1, y = label_pos, label = label
-    ), size = 5) +
-    scale_fill_manual(values = c(
-      "A" = "#f4a582", "B" = "#92c5de", "C" = "#d1bce3", "A+B" = "#b2df8a", "B+C" = "#b2abd2"
-    )) +
-    scale_color_manual(values = c("TRUE" = highlight_color, "FALSE" = NA), guide = "none") +
+    labs(title = title) +
     theme_void() +
-    ggtitle(title) +
-    theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+    theme(plot.title = element_text(hjust = 0.5, size = 16, face = "bold"))
 }
 
-# Define the three datasets
-data1 <- tibble(label = c("A+B", "C"), value = c(0.5, 0.5))  # (A+B) vs C
-data2 <- tibble(label = c("A", "B", "C"), value = c(0.25, 0.25, 0.5))  # A vs (B+C)
-data3 <- tibble(label = c("A", "B"), value = c(0.4, 0.6))  # A vs B
+# Pie 1: A vs B
+data1 <- tibble(label = c("B", "A"), value = c(0.35, 0.65))
+fill1 <- c("A" = "#f4a582", "B" = "#92c5de")
+p1 <- create_pie(data1, fill1, "A vs B")
 
-# Make each plot with outlines
-p1 <- make_pie_plot(data1, "(A+B) vs C", highlight_group = "A+B")
-p2 <- make_pie_plot(data2, "A vs (B+C)", highlight_group = c("B", "C"))
-p3 <- make_pie_plot(data3, "A vs B", highlight_group = c("A", "B"))
+# Pie 2: (A+B) vs C
+data2 <- tibble(label = c("C", "B", "A"), value = c(0.25, 0.25, 0.5))
+fill2 <- c("A" = "white", "B" = "#ff00ff", "C" = "#00ffff")
+p2 <- create_pie(data2, fill2, "(A+B) vs C", bold_groups = c("A", "B"))
 
-# Combine the three plots horizontally
+# Pie 3: (A+B) vs (C+D)
+data3 <- tibble(label = c("C", "B", "A", "D"), value = c(0.25, 0.20, 0.35, 0.20))
+fill3 <- c("A" = "white", "B" = "white", "C" = "#00ffff", "D" = "pink")
+p3 <- create_pie(data3, fill3, "(A+B) vs (C+D)", bold_groups = c("A", "B"))
+
+# Combine with patchwork
 (p1 | p2 | p3)
 
 ```
+
 
 ## Summary: When to Use Each Chart Type
 
@@ -646,7 +358,18 @@ p3 <- make_pie_plot(data3, "A vs B", highlight_group = c("A", "B"))
 | **Avoid pie charts** | When comparing non-adjacent slices or judging small differences               |
 
 # Conclusion
+As of now, no one has determined a definitive winner between pie charts and bar charts. These two charts remain essential in every part of science, business, sociology, and related fields. The efficacy of various charts is contingent upon ratio, measurement, and perception aspects of the representation. In research, a chart should not be dismissed solely because it is deemed inadequate.
+Pie charts make it easier to assess proportions relative to the whole, but bar charts excel in comparing magnitudes and ranking activities. Performance fluctuates depending on whether the task entails value estimation, segment comparison, or identification of the major component. Generally, charts that clearly delineate comparative parts (e.g., adjacent slices or bold outlines) enhance interpretability.
+
+We have also discovered an intriguing fact that, despite the evolution of formats and digital interfaces, fundamental perceptual concepts (@eellsRelativeMeritsCircles1926, @clevelandGraphicalPerceptionTheory1984 and so on) continue to have validity. Nonetheless, this finding does not signify the conclusion of the pursuit for the optimal chart. Future research can clarify the dispute through improved experimental design and more compelling methodologies.
 
 # Future Research
+
+Numerous constraints are present in both early and contemporary investigations.  Initial trials (from the 1920s to 1980s) frequently exhibited insufficient statistical rigor, characterized by delicate measurement frameworks and rudimentary designs.  Contemporary research (@spenceDisplayingProportionsPercentages1991; @hill2025bar) has implemented enhanced experimental designs, however it continues to encounter difficulties, especially with participant diversity.
+
+Contemporary research predominantly utilizes student samples, so constraining generalizability and potentially failing to represent wider perceptual disparities across age, education, or cultural contexts.  Subsequent investigations ought to tackle this issue by enhancing sample variety and refining experimental methodologies.  This may reveal fresh insights and promote more inclusive, contextually suitable chart type.
+
+ Individuals' perceptions of charts may alter between devices—mobile phones, tablets, or desktop monitors—due to variations in screen size, resolution, and interaction methods.  Furthermore, enhancing the reliability of perceptual measurements is crucial.  Future research may include technologies such as eye-tracking, response time analysis, or cognitive load evaluations to provide more nuanced findings.  The objective is to convert experimental results into practical design advice that assist practitioners in choosing the most suitable chart kinds for certain audiences and jobs.
+
 
 # Reference
