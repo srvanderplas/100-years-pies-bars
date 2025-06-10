@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # 📌 Project To-Do List
 
-## 🚀 Phase 1: Reading Papers & Taking Notes (By April 8)
+## 🚀 Phase 1: Reading Papers & Taking Notes (By March 15)
 - [x] **Done Until Cleveland 1984**  
 - [ ] **02/25**: Cleveland 1985, 1986  
 - [ ] **03/04**: Cleveland 1987,Spence 1991  
@@ -31,7 +31,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ---
 
-## 🤖 Phase 3: Start Writing (April 22 Onward)
+## 🤖 Phase 3: Start Writing (By spring break Onward- March 18)
 - [ ] Outline the main sections of the paper  
 - [ ] Draft the introduction and background  
 - [ ] Write the main discussion points  
