@@ -1,0 +1,190 @@
+---
+title: "100 years of Pies vs. Bars"
+author: " Maksuda Aktar Toma"
+institute: "University of Nebraska Lincoln"
+date: today
+format:
+  beamer:
+    theme: metropolis
+    colortheme: beaver
+    title-slide-attributes: "align=center"
+    pdf-engine: xelatex
+    mainfont: Times New Roman
+---
+
+# Content
+
+- Introduction
+- Motivation
+- The Dawn of Empirical Graphics
+- Modern Experimental Graphics
+- Historical Experimental design
+- Result
+- Conclusion
+
+# Introduction: Pie vs. Bar — A Century-Long Debate
+
+- Pie and bar charts date back to Playfair (early 1800s).
+- Pie charts often criticized as less accurate, yet remain widely used.
+- This review explores:
+  - Historical experiments and design
+  - Task performance comparisons
+  - Practical usefulness of each chart type
+
+# Motivation: Why Revisit Pie vs. Bar?
+
+- Effective charts are essential for accurate communication of quantitative data.
+- Bar charts consistently outperform pie charts in accuracy, speed, and clarity (based on early research).
+- Yet, pie charts remain popular in media, business, and education.
+  - This raises key questions:
+  - Why do pie charts persist?
+  - How do habits, aesthetics, or tradition influence chart selection?
+
+![Pie vs. Bar](000023.png){width=80% height=160px}
+
+# The Dawn of Empirical Graphics
+
+- Early JASA studies (1926–1930s) by Eells, von Huhn, and Croxton tested pie vs. bar charts for accuracy and speed.
+- Tasks varied: Eells used part estimation; Croxton used ratio comparisons like $A/B$, $A+B=1$
+- Findings: No clear winner—results depended on task design; von Huhn and Croxton critiqued and refined earlier work.
+ 
+![*Examples of comparison tasks used in graphical perception studies*](pie-slices.png)
+
+# Modern Experimental Graphics
+
+![*Visual encodings ordered by perceptual accuracy, as proposed by Cleveland and McGill*](cleveland-mcgill.jpg){width=80% height=200px}
+
+\scriptsize
+- The first six activities are listed according to Cleveland and McGill's accuracy tests. Assumed to be far less accurate than the others.
+
+
+# Modern Experimental Graphics (Cont.)
+
+- Spence & Lewandowsky (1991): Compared A vs. B+C using bar, pie, and table; measured accuracy and speed.
+- Peterson (1954): Evaluated 8 chart types for part-whole accuracy; found format matters.
+- Simkin & Hastie (1987): Bars better for comparisons; pies better for proportions.
+- Skau & Kosara (2016): Pie distortions reduce accuracy; arc cues work best.
+- Hill (2025): Bars best for ranking; pies/donuts strong in simple proportion tasks.
+
+# Experimental Description
+
+![*Summary of Experimental Studies on Chart Perception*](picture3.png){height=280px}
+
+
+# Accuracy of Charts
+
+![*Accuracy of Bar Chart By Task Type*](000013.png){width=80% height=200px}
+
+\scriptsize
+- Filled dots indicate studies that reported standard errors; hollow dots did not
+- Hill (2024) showed the lowest estimation error, indicating the highest accuracy among all studies.
+- Studies with Close bar alignment performed better than those with Far bar placement
+
+
+# Accuracy of Charts (Cont.)
+
+- Heer & Bostock (2010) showed the lowest error, indicating better accuracy with segmented bars.
+- Older studies had higher error rates and often lacked standard error reporting (hollow points).
+
+:::{.columns}
+::: {.column width="50%"}
+
+![*Accuracy of Bar Chart By Task Type*](000013.png)
+:::
+::: {.column width="50%"}
+  
+![*Accuracy of Bar Chart By Task Type*](00009.png)
+:::
+:::
+
+
+# Accuracy of Charts (Cont.)
+
+- Pie charts perform well for part-to-whole tasks, with low error (1–3%).
+- Segment comparisons are harder, showing higher errors (4–6%).
+- Recent studies show improved accuracy with better design.
+
+:::{.columns}
+::: {.column width="50%"}
+
+![*Accuracy of Pie Chart By Task Type*](00008.png)
+:::
+::: {.column width="50%"}
+![*Accuracy of Pie Chart By Task Type*](00007.png)
+:::
+:::
+
+---
+
+# Result
+
+- Bar charts excel in comparison and ranking tasks — faster, more accurate, and user-preferred.
+- Pie charts perform well in part-to-whole and grouped estimation tasks, aligning with intuitive reasoning.
+- Task matters: Bar > Pie for $A$ vs $B$; Pie > Bar for $A / (A+B)$; mixed results for $A$ vs $B+C$, $A+B$ vs $C+D$
+
+# Conclusion
+
+:::{.callout-tip title="Conclusion"}
+There is no universal winner.
+The most effective chart type depends on the specific judgment or task.
+:::
+
+- Both chart types remain widely used across science, business, and social sciences.
+- The effectiveness of a chart depends on:
+  - the task (comparison, estimation, ranking),
+  - perceptual features (angle, length, position),
+  - and visual design elements ( adjacency, clarity).
+- Pie charts are generally better for conveying part-to-whole relationships.
+- Bar charts are superior for comparing magnitudes and identifying rankings.
+
+
+# References
+
+\scriptsize
+
+Funkhouser, H. G. (1937). Historical development of the graphical representation of statistical data. Osiris, 3, 269–404. https://doi.org/10.1080/03697827.1937.10559475
+
+Croxton, F. E., & Stein, H. (1932). Graphic comparisons by bars, squares, circles, and cubes. Journal of the American Statistical Association, 27(177), 54–60.
+
+von Huhn, R. (1927). Further studies in the graphic use of circles and bars: A discussion of the Eells experiment. Journal of the American Statistical Association, 22(157), 31–39. https://doi.org/10.2307/2277346
+
+Croxton, F. E., & Stryker, R. E. (1927). Bar charts versus circle diagrams. Journal of the American Statistical Association, 22(160), 473–482. https://doi.org/10.2307/2276829
+
+Eells, W. C. (1926). The relative merits of circles and bars for representing component parts. Journal of the American Statistical Association, 21(154), 119–132. https://doi.org/10.2307/2277140
+
+Cleveland, W. S., & McGill, R. (1984). Graphical perception: Theory, experimentation, and application to the development of graphical methods. Journal of the American Statistical Association, 79(387), 531–554. https://doi.org/10.1080/01621459.1984.10478080
+
+Cleveland, W. S., & McGill, R. (1985). Graphical perception and graphical methods for analyzing scientific data. Science, 229(4716), 828–833. https://doi.org/10.1126/science.229.4716.828
+
+
+# References
+
+\scriptsize
+
+Cleveland, W. S., & McGill, R. (1986). An experiment in graphical perception. International Journal of Man-Machine Studies, 25(5), 491–500. https://doi.org/10.1016/S0020-7373(86)80019-0
+
+Simkin, D., & Hastie, R. (1987). An information-processing analysis of graphs and tables. Cognitive Psychology, 19(4), 530–544. https://doi.org/10.2307/2289447
+
+Holtz, Y. (2018, August). The issue with pie chart. Data To Viz. https://www.data-to-viz.com/caveat/www.data-to-viz.com/caveat/pie.html
+
+iCharts Marketing Department. (2017, November). 4 problems with pie charts (and what to do instead). iCharts. https://web.archive.org/web/20180223231734/https://icharts.net/blog/data-visualization-guides/4-problems-pie-charts-instead
+
+Skau, D., & Kosara, R. (2016). Arcs, angles, or areas: Individual data encodings in pie charts. Computer Graphics Forum, 35(3), 121–130. https://doi.org/10.1111/cgf.12888
+
+Heer, J., & Bostock, M. (2010). Crowdsourcing graphical perception: Using Mechanical Turk to assess visualization design. In Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (pp.203–212). https://doi.org/10.1145/1753326.1753357
+
+Hill, N. D. (2025). Bar, pie or donut? Exploring chart effectiveness for part-to-whole communication. Information Visualization, 24(1), 3–20. https://doi.org/10.1177/14738716241259432
+
+---
+
+# Thank You
+
+::: {style="text-align: center;"}
+
+\begin{center}
+\LARGE \textbf{Questions?}
+\end{center}
+
+:::
+
+
