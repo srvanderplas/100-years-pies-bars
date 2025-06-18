@@ -10,28 +10,6 @@ This project brings together findings from psychology, statistics, and data visu
 
 ---
 
-## Daily Journal
-
-### Today's To-Do List (June 17, 2025)
-
--   [x] Finalize README file
--   [ ] Reorganize plots and name them consistently
--   [ ] Start auditing Computing books
--   [ ] Finish module 3,4 of WAI training
-
-### Progress Log
-
--   [x] Drafted project synopsis
--   [x] Listed and organized all bibtex
--   [ ] Under Review
-
-### Plan for Next Week
-
--   Finalize and submit draft of full manuscript (.qmd or .pdf)
--   Annotate the Cleveland & McGill hierarchy figure
--   Finish the training
-
-
 # Acknowledgments
 
 This project was conducted as part of the Master's project, focusing on visual perception and statistical graphics. Special thanks to the researchers whose foundational experiments informed this synthesis.
