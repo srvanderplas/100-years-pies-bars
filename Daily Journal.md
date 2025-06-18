@@ -30,7 +30,8 @@ The second project involves going through statistical computing textbook used in
 ## Challenges:
 
 -   Need to finalize the writing part of the project. Not sure about including pictures in the report
--   WAI modules have dense terminology, which slowed progress initially.
+
+![*Visual encodings ordered by perceptual accuracy, as proposed by Cleveland and McGill*](clv-mc.png)
 
 ---
 
