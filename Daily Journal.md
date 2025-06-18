@@ -37,7 +37,7 @@ The second project involves going through statistical computing textbook used in
 ## Picture of the Day
 
 
-![*Visual encodings ordered by perceptual accuracy, as proposed by Cleveland and McGill*](cleveland-mcgill.jpg){width=80% height=200px}
+![*Examples of comparison tasks used in graphical perception studies*](pie-slices.png)
 
 ---
 
