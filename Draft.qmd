@@ -43,15 +43,21 @@ editor:
 # Abstract
 
 The debate between pie charts and bar charts has been ongoing for over a century.
-Numerous studies with distinct methodologies and experimental designs have attempted to resolve this issue, but no single consensus has emerged.
-In this paper, we will provide a comprehensive summary of the existing literature, analyze the strengths and limitations of both chart types, and attempt to identify a unified solution based on empirical evidence and theoretical insights.
+<!-- Ok, the debate is not between the charts -- it's between either proponents of either chart (e.g. the people promoting them) or about the use of each chart.  -->
+Numerous studies with distinct methodologies and experimental designs have attempted to 
+~~resolve this issue~~ 
+[determine which chart is more effective]{.svp}, but no single consensus has emerged[, even after 100 years of experimentation]{.svp}.
+In this paper, we 
+~~will provide a comprehensive summary of the existing literature~~ 
+[assess the existing literature and attempt to reconcile experiments with diverging results]{.svp}. 
+~~ analyze the strengths and limitations of both chart types, and attempt to identify a unified solution based on empirical evidence and theoretical insights.~~
 
 It's really hard to reach in a conclusion that which one is better in just a one liner.
 We will review previous work on this topic, analyze their experimental designs, compare different scenarios, and attempt to generalize findings based on these studies.
 
 # Introduction
 
-William Playfair introduced the pie and bar charts in the early 1800s, and by the turn of the next century, strong opinions about the effectiveness of alternative displays of the same data had been publicized in textbooks and manuals.
+William Playfair introduced the pie and bar charts in the early 1800s, [This is demonstrably false -- https://www.anychart.com/blog/2015/06/02/first-bar-chart-in-history/, at least for bar charts.]{.svp} and by the turn of the next century, strong opinions about the effectiveness of alternative displays of the same data had been publicized in textbooks and manuals.
 For instance, @eellsRelativeMeritsCircles1926 quotes two contemporary resources that discuss pie charts as "not a desirable form of presentation" [@brintonGraphicMethodsPresenting1914] and, more strongly, "an insult to a man's intelligence" [@karsten1923charts].
 @brintonGraphicMethodsPresenting1914 even identifies that the "sector method" is common, but if horizontal bar methods were used more frequently, they would be preferred for both speed and accuracy.
 @eellsRelativeMeritsCircles1926 also quotes an excerpt from an introductory statistics textbook [@secristIntroductionStatisticalMethods1925], which argues that pie charts require more cognitive effort to use accurately than a comparable stacked bar chart, calling pie diagrams "clumsy and defective".
@@ -81,26 +87,27 @@ The simplified nature of the experiment attracted critiques from @vonhuhnFurther
 @vonhuhnFurtherStudiesGraphic1927's paper provides several examples which highlight concerns with the Eells study, and argues that while pie charts may be better in certain simple situations, bar charts are much more extensible and facilitate more advanced comparisons, but does not include any experimental studies.
 <!-- Not much has changed today - experimental work is often criticized by those who provide toy examples but no empirical data due to compromises necessary to ensure experimental control.  --> Croxton's early experimental data (attached to @vonhuhnFurtherStudiesGraphic1927) had a larger number of participants than @eellsRelativeMeritsCircles1926, but only tested two-category charts with only two proportions: .25 and .4.
 In addition, Croxton's study elicited estimates from participants as $A/B$ comparisons, where $A + B = 1$, while Eells elicited estimates for $A$ and $B$ separately.
-<!-- It seems that prior to @eellsRelativeMeritsCircles1926, some researchers were empirically testing charts, but these experiments were not necessarily published for broader consumption; when the conversation arose in JASA, Croxton had data from years prior ready to provide additional insight. --> This multi-year back-and-forth conversation is interesting in part because it pinpoints an early example of experimental statistical graphics as a discipline of interest to statisticians for both personal investigation and as an audience for the results.
+<!-- It seems that prior to @eellsRelativeMeritsCircles1926, some researchers were empirically testing charts, but these experiments were not necessarily published for broader consumption; when the conversation arose in JASA, Croxton had data from years prior ready to provide additional insight. --> 
+This multi-year back-and-forth conversation is interesting in part because it pinpoints an early example of experimental statistical graphics as a discipline of interest to statisticians for both personal investigation and as an audience for the results.
+[It is both an example of early graphical testing and a cautionary tale, as proponents of different viewpoints were primarily talking past each other. While the riposte in these early papers and the strong opinions in contemporary design guidelines are entertaining to read, they do not generally support informed choices about what chart to use in practice.]{.svp}
 
 Subsequently, @croxtonBarChartsCircle1927 published additional data assessing the accuracy of estimates from pie and bar charts, varying number of categories, and orientation/alignment of sections.
 @croxtonBarChartsCircle1927 found that pie charts matched or surpassed bar charts in most situations, across different scale alignments, and in charts with up to 5 categories (though differences were not statistically significant at 5 categories).
 The final paper in this early set of comparisons was @croxtonGraphicComparisonsBars1932, which examined a variety of representations of proportional data, but outside the context of a statistical chart; the experimental stimuli, while applicable to charts, show a focus on general perception (though published in JASA).
 Experimental graphics studies have largely gone unreported (if they were conducted) between 1932 and the 1980s, particularly in statistical publications, though the issue of pies and bars occasionally pops up during this period in other disciplines.
-[However, guidance to favor bar charts over pie charts still shows up in statistical literature -- cite @fienbergGraphicalMethodsStatistics1979, @haemerPseudoThirdDimension1951, @haemerPresentationProblemsSuiting1949, @nisselson1978graphic. It almost seems like approximately once every 20 years people think about graphics, decry the state of the field, and call for a better set of empirical guidelines!]{.svp}
+[However, guidance to favor bar charts over pie charts still shows up in statistical literature [@haemerPresentationProblemsSuiting1949;@haemerPseudoThirdDimension1951;@fienbergGraphicalMethodsStatistics1979;@nisselson1978graphic;@wickhamGraphicalCriticismHistorical2013]. It almost seems like approximately once a generation, statisticians think about graphics, decry the state of the field, and call for a better set of empirical guidelines.]{.svp}
 
 # Modern Experimental Graphics
-
-Much later, @clevelandGraphicalPerceptionTheory1984, a statistician and a psychologist by training, respectively, conducted experiments on simple graphical elements.
+[Approximately 55 years after the original sequence of experiments,]{.svp} @clevelandGraphicalPerceptionTheory1984, a statistician and a psychologist by training, respectively, conducted experiments on simple graphical elements.
 These experiments were presented as supporting a hierarchy of graphical perception that evolved over the course of the study sequence.
 This ranking indicates that aligned length judgments are more accurate than judgments based on area or angle, implying that bar charts are more accurately perceived than pie charts.
 While the full hierarchy of feature comprehension is often assumed to be experimentally derived, the experiments presented in the series of Cleveland & McGill papers only inform a few elements of this hierarchy.
 As in the late 1920s, the combination of introspection based reasoning and a sequence of simple experiments did not go uncontested.
 @spenceDisplayingProportionsPercentages1991 (both psychologists) used forced-choice questions of the form "which is bigger, A or B+C" to investigate the accuracy of pie and bar charts for making part-to-whole comparisons.
-The later studies show more of an interdisciplinary conversation around data displays, which have become a general tool not limited to statisticians.
+The later studies show that the [1980-1990s experiments were]{.svp} more of an interdisciplinary conversation around data displays, [reflecting the fact that statistical graphics had]{.svp} become a [more]{.svp} general [scientific]{.svp} tool [and were no longer]{.svp} limited to statisticians.
 As a result, the literature becomes fragmented; studies are conducted across different disciplines, with different methods, elicitation questions, protocols, and, ultimately, different conclusions.
 
-![Different elicitation methods used to assess accuracy of pie chart estimates.](pie-type-example.png)
+![Different methods used to assess accuracy of pie chart estimates. In addition to the different ways to divide up a pie chart's comparisons, there are also different numerical quantities which can be requested: the ratio of C to A + B and the ratio of C to the whole (A + B + C). These different elicitation methods impact the accuracy of participant responses for each type of chart.](pie-slices.png){fig-alt="Three pie charts, divided up in A/B, (A/B)/C, and A/(B/C)/D slices. The first compares A to B, the second compares A+B to C, and the third compares A+D to B+C. Slices that are grouped (A/B) and (A/D), (B/C) are colored similarly."}
 
 # Experimental design
 
