@@ -14,24 +14,20 @@ The second project involves going through statistical computing textbook used in
 
 # Daily Journal
 
-### Today's To-Do List (June 18, 2025)
+### Today's To-Do List (June 25, 2025)
 
--   [x] Finalize README file
--   [ ] Audit Computing books of chapter 2,3
--   [ ] Finish module 4,5 of WAI training
+-   [x] Audit Computing books of part I
+-   [ ] Finish module 4.1, 4.2 and 4.3 of WAI training
 
 ## What I Did Last Week:
 
--   Finished drafting the report.
--   Presented "100 years of pies vs. bars" project
--   Began auditing the Markdown chapter of the Computing Book.
--   Started WAI course and completed the first 3 units.
+-   Finished auditing of "Introduction to Statistical Computing"
+-   Finished Module 3 of WAI Training
 
 ## Challenges:
 
--   Need to finalize the writing part of the project. Not sure about including pictures in the report
+-   Need to finalize the writing part of the project.
 
-![*Visual encodings ordered by perceptual accuracy, as proposed by Cleveland and McGill*](clv-mc.png)
 
 ---
 
@@ -50,5 +46,4 @@ The second project involves going through statistical computing textbook used in
 
 -   Push updates and open GitHub issues (if required) for at least two additional chapters of the Computing Book.
 
--   Complete all remaining WAI training units and draft a summary of what I learned.
 
