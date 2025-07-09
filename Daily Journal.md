@@ -14,15 +14,16 @@ The second project involves going through statistical computing textbook used in
 
 # Daily Journal
 
-### Today's To-Do List (June 25, 2025)
+### Today's To-Do List (July 9, 2025)
 
--   [x] Audit Computing books of part I
--   [ ] Finish module 4.1, 4.2 and 4.3 of WAI training
+-   [x] Finish Auditing of the Computing books of part II
 
-## What I Did Last Week:
+## What I Did Last Weeks (June 25 - July 1)
 
 -   Finished auditing of "Introduction to Statistical Computing"
--   Finished Module 3 of WAI Training
+-   Finished auditing part I of computing book
+-   Finished WAI Training
+-   Edited the "100 years of Pies vs. Bars"
 
 ## Challenges:
 
@@ -34,16 +35,14 @@ The second project involves going through statistical computing textbook used in
 ## Picture of the Day
 
 
-![*Examples of comparison tasks used in graphical perception studies*](pie-slices.png)
 
 ---
 
 ## Plans for Next Week:
 
+-   Finish the auditing of part III
+
 -   Finalize and submit draft of full report
 
--   Finish the training
-
--   Push updates and open GitHub issues (if required) for at least two additional chapters of the Computing Book.
 
 
