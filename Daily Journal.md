@@ -30,11 +30,11 @@ The second project involves going through statistical computing textbook used in
 -   Need to finalize the writing part of the project.
 
 
----
+---ß
 
 ## Picture of the Day
 
-
+![*Examples of comparison tasks used in graphical perception studies*](pie-slices.png)
 
 ---
 
